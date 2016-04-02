@@ -6,30 +6,50 @@ class Species {
     private:
         vector<string> instructions;
         string name;
+
     public:
         Species(string name);
-        addInstruction(string s);
+        void addInstruction(string instruction);
+        void print_name(ostream& w);
+        bool equal(Species s);
+        string curr_inst(int index);
 };
 
 class Creature {
-    
     private:
         Species species;
-        int direction;
-        int program_cnt;
+        int d;
+        int cnt;
+
+        void parse_inst(cnt);
+        bool is_empty(vector<vector<Creature>> &b, int r, int c);
+        void go(int n);
+
+        void hop(vector<vector<Creature>> &b, int r, int c);
+        void left();
+        void right();
+        void infect(vector<vector<Creature>> &b, int r, int c);
+        void if_empty(int n, vector<vector<Creature>> &b, int r, int c);
+        void if_wall(int n, vector<vector<Creature>> &b, int r, int c);
+        void if_random(int n);
+        void if_enemy(int n, vector<vector<Creature>> &b, int r, int c);
+
     public:
-        Creature(Species s, Direction d);
+        Creature(Species s, Direction direction);
+        void execute_instr(vector<vector<Creature>> &board, int row, int col);
+        void print_species(ostream& w);
 };
 
 class Darwin {
     private:
         int row;
         int column;
-        int num_of_creatures = 0;
+        vector< vector<Creature>> board;
     public:
         Darwin(int row, int col);
-        addCreature(Creature c, int r, int c);
-
+        void addCreature(Creature c, int r, int c);
+        void turn();
+        void print(ostream& w);
 };
 
 #endif // Darwin_h

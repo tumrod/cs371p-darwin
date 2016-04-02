@@ -17,10 +17,12 @@ class Species {
 
     public:
         Species(string name);
+        Species();
         void addInstruction(string instruction);
         void print_name(ostream& w);
         bool equal(Species s);
         string curr_inst(int index);
+        void remove();
 };
 
 class Creature {
@@ -31,15 +33,14 @@ class Creature {
 
         void parse_inst(int cnt, vector<vector<Creature>> &b, int r, int c);
         bool is_empty(vector<vector<Creature>> &b, int r, int c);
-        void go(int n);
-
+        void go(int n, vector<vector<Creature>> &b, int r, int c);
         void hop(vector<vector<Creature>> &b, int r, int c);
         void left();
         void right();
         void infect(vector<vector<Creature>> &b, int r, int c);
         void if_empty(int n, vector<vector<Creature>> &b, int r, int c);
         void if_wall(int n, vector<vector<Creature>> &b, int r, int c);
-        void if_random(int n);
+        void if_random(int n, vector<vector<Creature>> &b, int r, int c);
         void if_enemy(int n, vector<vector<Creature>> &b, int r, int c);
 
     public:
@@ -47,6 +48,8 @@ class Creature {
         Creature();
         void execute_instr(vector<vector<Creature>> &board, int row, int col);
         void print_species(ostream& w);
+        bool is_creature();
+        void remove();
 };
 
 class Darwin {

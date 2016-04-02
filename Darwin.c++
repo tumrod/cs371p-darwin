@@ -12,6 +12,7 @@ using namespace std;
 
 
 Species::Species(string name) : name(name) {}
+Species::Species() {}
 
 void Species::addInstruction(string instruction) {
     instructions.push_back(instruction);
@@ -31,7 +32,10 @@ string Species::curr_inst(int index) {
     return instructions[index];
 }
 
-
+void Species::remove() {
+  (*this).name = "\0";
+  (*this).instructions.clear();
+}
 
 void Creature::parse_inst(int inst_cnt, vector<vector<Creature>> &board, int row, int col) {
     string inst = species.curr_inst(inst_cnt);
@@ -55,52 +59,54 @@ void Creature::parse_inst(int inst_cnt, vector<vector<Creature>> &board, int row
     else if (!current_inst.compare("if_wall"))
         if_wall(n_inst, board, row, col);
     else if (!current_inst.compare("if_random"))
-        if_random(n_inst);
+        if_random(n_inst, board, row, col);
     else if (!current_inst.compare("if_enemy"))
         if_enemy(n_inst, board, row, col);
     else if (!current_inst.compare("go"))
-        go(n_inst);
+        go(n_inst, board, row, col);
 }
 
 bool Creature::is_empty(vector<vector<Creature>> &b, int r, int c) {
-    if ((d == 0) && (--c >= 0) && (b[r][--c] == NULL))
+    if ((d == 0) && (--c >= 0) && (!b[r][--c].is_creature()))
         return true;
         
-    else if ((d == 1) && (--r >= 0) && (b[--r][c] == NULL))
+    else if ((d == 1) && (--r >= 0) && (!b[--r][c].is_creature()))
         return true;
 
-    else if ((d == 2) && (++c < b[r].size()) && (b[r][++c] == NULL))
+    else if ((d == 2) && ((unsigned)++c < b[r].size()) && (!b[r][++c].is_creature()))
         return true;
         
-    else if ((d == 3) && (++r < b.size()) && (b[++r][c] == NULL))
+    else if ((d == 3) && ((unsigned)++r < b.size()) && (!b[++r][c].is_creature()))
         return true;
     
     else
         return false;
 }
 
-void Creature::go(int n){
+void Creature::go(int n, vector<vector<Creature>> &b, int row, int col){
     cnt = n;
-    parse_inst(cnt, );
+    parse_inst(cnt, b, row, col);
 }
 
-void Creature::hop(vector<vector<Creature>> &b, int r, int c){
+void Creature::hop(vector<vector<Creature>> &b, int row, int col){
+    int r = row;
+    int c = col;
     if(is_empty(b, r, c)) {
         if(d == 0){
-            b[r][--c] = b[r][c];
-            b[r][c] = NULL;
+            b[r][--c] = b[row][col];
+            b[row][col].remove();
             
         }else if (d == 1){
-            b[--r][c] = b[r][c];
-            b[r][c] = NULL;
+            b[--r][c] = b[row][col];
+            b[row][col].remove();
 
         }else if (d == 2){
-            b[r][++c] = b[r][c];
-            b[r][c] = NULL;
+            b[r][++c] = b[row][col];
+            b[row][col].remove();
             
         }else if (d == 3){
-            b[++r][c] = b[r][c];
-            b[r][c] = NULL;
+            b[++r][c] = b[row][col];
+            b[row][col].remove();
         }
     }
 }
@@ -123,83 +129,87 @@ void Creature::right(){
 void Creature::infect(vector<vector<Creature>> &b, int r, int c){
     if(!is_empty(b, r, c)) {
         if(d == 0 && !(species.equal(b[r][--c].species))) {
-            b[r][--c].species = species;
-            b[r][--c].cnt = 0;
+            b[r][c].species = species;
+            b[r][c].cnt = 0;
             
         }else if (d == 1 && !(species.equal(b[--r][c].species))) {
-            b[--r][c].species = species;
-            b[--r][c].cnt = 0;
+            b[r][c].species = species;
+            b[r][c].cnt = 0;
 
         }else if (d == 2 && !(species.equal(b[r][++c].species))) {
-            b[r][++c].species = species;
-            b[r][++c].cnt = 0;
+            b[r][c].species = species;
+            b[r][c].cnt = 0;
             
         }else if (d == 3 && !(species.equal(b[++r][c].species))) {
-            b[++r][c].species = species;
-            b[++r][c].cnt = 0;
+            b[r][c].species = species;
+            b[r][c].cnt = 0;
         }
     }
 }
 
 void Creature::if_empty(int n, vector<vector<Creature>> &b, int r, int c){
     if(is_empty(b, r, c))
-        go (n); 
+        go (n, b, r, c); 
     else
-        go (++cnt);
+        go (++cnt, b, r, c);
 }
 
 
-void Creature::if_wall(int n, vector<vector<Creature>> &b, int r, int c){
+void Creature::if_wall(int n, vector<vector<Creature>> &b, int row, int col){
+  int r = row; 
+  int c = col; 
     if(d == 0){
         if ( --c < 0)
-            go (n); 
+            go (n, b, row, col); 
         
     }else if (d == 1){
         if ( --r < 0)
-            go (n); 
+            go (n, b, row, col); 
 
     }else if (d == 2){
-        if ( ++c == b[r].size())
-            go (n); 
+        if ( (unsigned)++c == b[r].size())
+            go (n, b, row, col); 
         
     }else if (d == 3){
-        if ( ++r == b.size())
-            go (n); 
+        if ( (unsigned)++r == b.size())
+            go (n, b, row, col); 
 
     } else {
-        go (++cnt);
+        go (++cnt, b, row, col);
     }
 
 }
 
-void Creature::if_random(int n){
+void Creature::if_random(int n, vector<vector<Creature>> &b, int r, int c){
     if(rand()%2)
-        go(n);
+        go(n, b, r, c);
     else
-        go(++cnt);
+        go(++cnt, b, r, c);
 
 }
 
-void Creature::if_enemy(int n, vector<vector<Creature>> &b, int r, int c){
-    if (!is_empty(b, r, c)) {
+void Creature::if_enemy(int n, vector<vector<Creature>> &b, int row, int col){
+    int r = row;
+    int c = col;
+    if (!is_empty(b, row, col)) {
         if((d == 0) && (!species.equal(b[r][--c].species)))
-            go (n);
+            go (n, b, row, col);
         else if ((d == 1) && (!species.equal(b[--r][c].species)))
-            go (n);
+            go (n, b, row, col);
 
         else if ((d == 2) && (!species.equal(b[r][++c].species)))
-            go (n);
+            go (n, b, row, col);
 
         else if ((d == 3) && (!species.equal(b[++r][c].species)))
-            go (n);
+            go (n, b, row, col);
     } else {
-        go (++cnt);
+        go (++cnt, b, row, col);
     }
 }
 
 
 Creature::Creature(Species s, Direction direction): species(s), d(direction), cnt(0) {}
-Creature::Creature(): cnt(0) {}
+Creature::Creature(): species(NULL), d(-1), cnt(0) {}
 void Creature::execute_instr(vector<vector<Creature>> &board, int row, int col) {
     parse_inst(cnt, board, row, col);
     ++cnt;
@@ -209,23 +219,34 @@ void Creature::print_species(ostream& w) {
     species.print_name(w);
 }
 
+bool Creature::is_creature() {
+    if((*this).d < 0)
+      return false;
+    return true;
+}
+
+void Creature::remove() {
+  (*this).d = -1;
+  (*this).cnt = 0;
+  (*this).species.remove();
+}
+
 Darwin::Darwin(int row, int col) {
     board.resize(col, vector<Creature> (row));
 }
 
 void Darwin::addCreature(Creature creature, int r, int c) {
     board[r][c] = creature;
-    creature_list.push_back(creature);
 }
 
 void Darwin::turn() {
-    for(int r = 0; r < board.size(); ++r) {
-        for(int c = 0; c < r.size(); ++c) {
-            if(board[r][c] != NULL) {
+    for(int r = 0; (unsigned)r < board.size(); ++r) {
+        for(int c = 0; (unsigned)c < board[r].size(); ++c) {
+            if(board[r][c].is_creature()) {
                 Creature temp_creat = board[r][c];
-                int* temp = temp_creat.execute_instr(board, r, c);
-                board[temp[0]][temp[1]] = c;
-                board[r][c] = NULL;
+                temp_creat.execute_instr(board, r, c);
+                // board[temp[0]][temp[1]] = c;
+                // board[r][c].remove();
             }
                 
         }
@@ -233,10 +254,10 @@ void Darwin::turn() {
 }
 
 void Darwin::print(ostream& w) {
-    for(int r = 0; r < board.size(); ++r) {
+    for(int r = 0; (unsigned)r < board.size(); ++r) {
         w << r << " ";
-        for(int c = 0; c < r.size(); ++c) {
-            if(board[r][c] != NULL)
+        for(int c = 0; (unsigned)c < board[r].size(); ++c) {
+            if(board[r][c].is_creature())
                 board[r][c].print_species(w);
             else
                 w << ".";

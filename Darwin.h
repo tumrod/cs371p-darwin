@@ -7,6 +7,8 @@
 #include <vector>
 #include <cstdlib>
 
+using namespace std;
+
 enum Direction { west, north, east, south };
 class Species {
     private:
@@ -27,7 +29,7 @@ class Creature {
         int d;
         int cnt;
 
-        void parse_inst(cnt);
+        void parse_inst(int cnt, vector<vector<Creature>> &b, int r, int c);
         bool is_empty(vector<vector<Creature>> &b, int r, int c);
         void go(int n);
 
@@ -42,6 +44,7 @@ class Creature {
 
     public:
         Creature(Species s, Direction direction);
+        Creature();
         void execute_instr(vector<vector<Creature>> &board, int row, int col);
         void print_species(ostream& w);
 };
@@ -53,7 +56,7 @@ class Darwin {
         vector< vector<Creature>> board;
     public:
         Darwin(int row, int col);
-        void addCreature(Creature c, int r, int c);
+        void addCreature(Creature creature, int r, int c);
         void turn();
         void print(ostream& w);
 };

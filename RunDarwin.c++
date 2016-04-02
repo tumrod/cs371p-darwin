@@ -12,6 +12,7 @@
 #include <cstdlib>   // rand, srand
 #include <iostream>  // cout, endl
 #include <stdexcept> // invalid_argument, out_of_range
+#include "Darwin.h"
 
 // ----
 // main
@@ -23,11 +24,14 @@ int main () {
     // ----
     // food
     // ----
-
     /*
      0: left
      1: go 0
     */
+    Species f = Species("food");
+    f.addInstruction("left");
+    f.addInstruction("go 0");
+    // f.print(); 
 
     // ------
     // hopper
@@ -37,6 +41,10 @@ int main () {
      0: hop
      1: go 0
     */
+    Species h = Species("hopper");
+    h.addInstruction("hop");
+    h.addInstruction("go 0");
+    h.print(); 
 
     // -----
     // rover
@@ -73,6 +81,37 @@ int main () {
     // ----------
 
     cout << "*** Darwin 8x8 ***" << endl;
+    Darwin d = Darwin(8, 8);
+
+    Creature f1 = Creature(f, east);
+    d.addCreature(f1, 0, 0);
+    d.print(cout);
+
+    Creature h1 = Creature(h, north);
+    Creature h2 = Creature(h, east);
+    Creature h3 = Creature(h, south);
+    Creature h4 = Creature(h, west);
+    Creature f2 = Creature(f, north);
+
+    d.addCreature(h1, 3, 3);
+    d.addCreature(h2, 3, 4);
+    d.addCreature(h3, 4, 4);
+    d.addCreature(h4, 4, 3);
+    d.addCreature(f1, 7, 7);    
+    d.print(cout);
+    d.turn();
+    d.print(cout);
+
+    d.turn();
+    d.print(cout);
+
+    d.turn();
+    d.print(cout);
+    
+    d.turn();
+    d.print(cout);
+    // d.turn();
+    // f1.print(); 
     /*
     8x8 Darwin
     Food,   facing east,  at (0, 0)

@@ -37,33 +37,55 @@ void Species::remove() {
   (*this).instructions.clear();
 }
 
-void Creature::parse_inst(int inst_cnt, vector<vector<Creature>> &board, int row, int col) {
-    string inst = species.curr_inst(inst_cnt);
+void Species::print() {
+  cout << "name: " << name << endl; 
+  for (int i = 0; (unsigned)i < instructions.size(); ++i){
+    cout << "instruction " << i << " : " << instructions[i] << endl; 
+  }
+}
+
+int Species::instruction_size(){
+    return instructions.size();
+}
+
+void Creature::parse_inst(vector<vector<Creature>> &board, int row, int col) {
+    cnt = cnt % species.instruction_size(); 
+    string inst = species.curr_inst(cnt);
+    // cout << " intrsuction: " << inst << endl; 
     std::vector<std::string> temp_inst;
     boost::split(temp_inst, inst, boost::is_any_of(" "));
-    // vector<string> temp_inst = boost::split(inst, ' ');
-
+    // for(int i = 0; i < temp_inst.size(); ++i){
+    //     cout << " i: " << i << " : " << temp_inst[i] << endl; 
+    // }
+    int n_inst = -1 ;
     string current_inst = temp_inst.front();
-    int n_inst = atoi(temp_inst.back().c_str());
+    if (temp_inst.size() > 1)
+        n_inst = atoi(temp_inst.back().c_str());
 
-    if(!current_inst.compare("hop"))
+    // cout << " current instruction " << current_inst << " : " << n_inst << endl; 
+
+
+    if(!current_inst.compare("hop")) {
+        cout << "in hop" << endl;
         hop(board, row, col);
+    }
+        
     else if (!current_inst.compare("left"))
         left();
-    else if (!current_inst.compare("right"))
-        right();
-    else if (!current_inst.compare("infect"))
-        infect(board, row, col);
-    else if (!current_inst.compare("if_empty"))
-        if_empty(n_inst, board, row, col);
-    else if (!current_inst.compare("if_wall"))
-        if_wall(n_inst, board, row, col);
-    else if (!current_inst.compare("if_random"))
-        if_random(n_inst, board, row, col);
-    else if (!current_inst.compare("if_enemy"))
-        if_enemy(n_inst, board, row, col);
-    else if (!current_inst.compare("go"))
-        go(n_inst, board, row, col);
+    // else if (!current_inst.compare("right"))
+    //     right();
+    // else if (!current_inst.compare("infect"))
+    //     infect(board, row, col);
+    // else if (!current_inst.compare("if_empty"))
+    //     if_empty(n_inst, board, row, col);
+    // else if (!current_inst.compare("if_wall"))
+    //     if_wall(n_inst, board, row, col);
+    // else if (!current_inst.compare("if_random"))
+    //     if_random(n_inst, board, row, col);
+    // else if (!current_inst.compare("if_enemy"))
+    //     if_enemy(n_inst, board, row, col);
+    // else if (!current_inst.compare("go"))
+    //     go(n_inst, board, row, col);
 }
 
 bool Creature::is_empty(vector<vector<Creature>> &b, int r, int c) {
@@ -73,7 +95,7 @@ bool Creature::is_empty(vector<vector<Creature>> &b, int r, int c) {
     else if ((d == 1) && (--r >= 0) && (!b[--r][c].is_creature()))
         return true;
 
-    else if ((d == 2) && ((unsigned)++c < b[r].size()) && (!b[r][++c].is_creature()))
+    else if ((d == 2) && ((unsigned)++c < b[0].size()) && (!b[r][++c].is_creature()))
         return true;
         
     else if ((d == 3) && ((unsigned)++r < b.size()) && (!b[++r][c].is_creature()))
@@ -85,38 +107,50 @@ bool Creature::is_empty(vector<vector<Creature>> &b, int r, int c) {
 
 void Creature::go(int n, vector<vector<Creature>> &b, int row, int col){
     cnt = n;
-    parse_inst(cnt, b, row, col);
+    parse_inst(b, row, col);
 }
 
 void Creature::hop(vector<vector<Creature>> &b, int row, int col){
     int r = row;
     int c = col;
+    // cout << "hopping " << "r " << r << " c " << c << endl;
+
     if(is_empty(b, r, c)) {
+
         if(d == 0){
+            cout << "d = 0" << endl;
             b[r][--c] = b[row][col];
             b[row][col].remove();
             
         }else if (d == 1){
+            cout << "d = 1" << endl;
             b[--r][c] = b[row][col];
+            // cout << "copy hopping" << endl;
             b[row][col].remove();
-
         }else if (d == 2){
+            cout << "d = 2" << endl;
             b[r][++c] = b[row][col];
             b[row][col].remove();
             
         }else if (d == 3){
+            cout << "d = 3" << endl;
             b[++r][c] = b[row][col];
             b[row][col].remove();
         }
+
     }
+    ++cnt;
+    cout << "out of hop" << endl;
 }
 
 
 void Creature::left(){
+    // cout << "Executing Left" << endl;
     if(d)
         --d;
     else
         d = 3;
+    ++cnt;
 }
 
 void Creature::right(){
@@ -124,6 +158,7 @@ void Creature::right(){
         d = 0;
     else
         ++d;
+    ++cnt;
 }
 
 void Creature::infect(vector<vector<Creature>> &b, int r, int c){
@@ -144,7 +179,9 @@ void Creature::infect(vector<vector<Creature>> &b, int r, int c){
             b[r][c].species = species;
             b[r][c].cnt = 0;
         }
+        
     }
+    ++cnt;
 }
 
 void Creature::if_empty(int n, vector<vector<Creature>> &b, int r, int c){
@@ -167,7 +204,7 @@ void Creature::if_wall(int n, vector<vector<Creature>> &b, int row, int col){
             go (n, b, row, col); 
 
     }else if (d == 2){
-        if ( (unsigned)++c == b[r].size())
+        if ( (unsigned)++c == b[0].size())
             go (n, b, row, col); 
         
     }else if (d == 3){
@@ -208,10 +245,14 @@ void Creature::if_enemy(int n, vector<vector<Creature>> &b, int row, int col){
 }
 
 
-Creature::Creature(Species s, Direction direction): species(s), d(direction), cnt(0) {}
-Creature::Creature(): species(NULL), d(-1), cnt(0) {}
+Creature::Creature(Species s, Direction direction): species(s), d(direction), cnt(0) {
+    cout << "Created Creature " << direction << endl;
+    s.print();
+}
+Creature::Creature(): d(-1), cnt(0) {}
 void Creature::execute_instr(vector<vector<Creature>> &board, int row, int col) {
-    parse_inst(cnt, board, row, col);
+    cout << " In execute_instr creature " << endl;
+    parse_inst(board, row, col);
     ++cnt;
 }
 
@@ -226,37 +267,62 @@ bool Creature::is_creature() {
 }
 
 void Creature::remove() {
+    cout << "removing creature" << endl;
   (*this).d = -1;
   (*this).cnt = 0;
   (*this).species.remove();
 }
 
+void Creature::print() {
+    cout << "species: " << endl;
+    species.print();
+    cout << "count: " << cnt << endl;
+    cout << "direction: " << d << endl;
+}
+
 Darwin::Darwin(int row, int col) {
-    board.resize(col, vector<Creature> (row));
+    board.resize(row, vector<Creature> (col, Creature()));
+    cout<< "Created Darwin  " << endl; 
+    cout << " board size: " << board.size() << " x " << board[0].size() << endl;
 }
 
 void Darwin::addCreature(Creature creature, int r, int c) {
+    cout << "Adding Creature" << endl;
     board[r][c] = creature;
+    board[r][c].print();
 }
 
 void Darwin::turn() {
+    cout << "Execute Turn" << endl;
+    vector<vector<Creature>> temp_board;
+    temp_board = board;
     for(int r = 0; (unsigned)r < board.size(); ++r) {
-        for(int c = 0; (unsigned)c < board[r].size(); ++c) {
+        for(int c = 0; (unsigned)c < board[0].size(); ++c) {
             if(board[r][c].is_creature()) {
+                
+                
                 Creature temp_creat = board[r][c];
-                temp_creat.execute_instr(board, r, c);
+                temp_creat.execute_instr(temp_board, r, c);
+                // cout << "temp creat status" << endl;
+                temp_creat.print();
                 // board[temp[0]][temp[1]] = c;
                 // board[r][c].remove();
             }
                 
         }
     }
+    board = temp_board; 
 }
 
 void Darwin::print(ostream& w) {
+    w << "printing board" << endl;
+    w << "  "; 
+    for(int col = 0; (unsigned)col < board[0].size(); ++col)
+        w << col;
+    w << endl;
     for(int r = 0; (unsigned)r < board.size(); ++r) {
         w << r << " ";
-        for(int c = 0; (unsigned)c < board[r].size(); ++c) {
+        for(int c = 0; (unsigned)c < board[0].size(); ++c) {
             if(board[r][c].is_creature())
                 board[r][c].print_species(w);
             else

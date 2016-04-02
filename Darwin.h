@@ -23,6 +23,8 @@ class Species {
         bool equal(Species s);
         string curr_inst(int index);
         void remove();
+        void print(); 
+        int instruction_size(); 
 };
 
 class Creature {
@@ -31,7 +33,7 @@ class Creature {
         int d;
         int cnt;
 
-        void parse_inst(int cnt, vector<vector<Creature>> &b, int r, int c);
+        void parse_inst(vector<vector<Creature>> &b, int r, int c);
         bool is_empty(vector<vector<Creature>> &b, int r, int c);
         void go(int n, vector<vector<Creature>> &b, int r, int c);
         void hop(vector<vector<Creature>> &b, int r, int c);
@@ -50,6 +52,7 @@ class Creature {
         void print_species(ostream& w);
         bool is_creature();
         void remove();
+        void print();
 };
 
 class Darwin {

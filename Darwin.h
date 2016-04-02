@@ -1,7 +1,13 @@
 #ifndef Darwin_h
 #define Darwin_h
-enum Direction { west, north, east, south };
 
+#include <cassert>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cstdlib>
+
+enum Direction { west, north, east, south };
 class Species {
     private:
         vector<string> instructions;

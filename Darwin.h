@@ -37,8 +37,8 @@ class Creature {
         bool is_empty(vector<vector<Creature>> &b, int r, int c);
         void go(int n, vector<vector<Creature>> &b, int r, int c);
         void hop(vector<vector<Creature>> &b, int r, int c);
-        void left();
-        void right();
+        void left(vector<vector<Creature>> &b, int r, int c);
+        void right(vector<vector<Creature>> &b, int r, int c);
         void infect(vector<vector<Creature>> &b, int r, int c);
         void if_empty(int n, vector<vector<Creature>> &b, int r, int c);
         void if_wall(int n, vector<vector<Creature>> &b, int r, int c);
@@ -62,7 +62,7 @@ class Darwin {
         vector< vector<Creature>> board;
     public:
         Darwin(int row, int col);
-        void addCreature(Creature creature, int r, int c);
+        void addCreature(Creature& creature, int r, int c);
         void turn();
         void print(ostream& w);
 };

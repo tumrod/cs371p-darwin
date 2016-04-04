@@ -44,7 +44,7 @@ int main () {
     Species h = Species("hopper");
     h.addInstruction("hop");
     h.addInstruction("go 0");
-    h.print(); 
+    // h.print(); 
 
     // -----
     // rover
@@ -85,7 +85,7 @@ int main () {
 
     Creature f1 = Creature(f, east);
     d.addCreature(f1, 0, 0);
-    d.print(cout);
+    // d.print(cout);
 
     Creature h1 = Creature(h, north);
     Creature h2 = Creature(h, east);

@@ -48,6 +48,88 @@ int Species::instruction_size(){
     return instructions.size();
 }
 
+vector<int> Species::get_action(int &cnt){
+    // should parse the insturctions and return the action number 
+    cnt = cnt % instructions.size();  
+    // cout << "count " << cnt << endl; 
+    string inst = instructions[cnt];
+    // cout << " intrsuction: " << inst << endl; 
+    std::vector<std::string> temp_inst;
+    boost::split(temp_inst, inst, boost::is_any_of(" "));
+    // for(int i = 0; i < temp_inst.size(); ++i){
+    //     cout << " i: " << i << " : " << temp_inst[i] << endl; 
+    // }
+    int n_inst = -1 ;
+    string current_inst = temp_inst.front();
+    if (temp_inst.size() > 1)
+        n_inst = atoi(temp_inst.back().c_str());
+
+    // cout << " current instruction " << current_inst << " : " << n_inst << endl; 
+    vector<int> act_inst; 
+
+    if(!current_inst.compare("hop"))
+        act_inst.push_back(hop); 
+    else if (!current_inst.compare("left"))
+        act_inst.push_back(lft);  
+    else if (!current_inst.compare("right"))
+        act_inst.push_back(rit);
+    else if (!current_inst.compare("infect"))
+        act_inst.push_back(infect);
+    else if (!current_inst.compare("if_empty")){
+        act_inst.push_back(empty);
+        act_inst.push_back(n_inst);
+    }   
+    else if (!current_inst.compare("if_wall")){
+        act_inst.push_back(wall);
+        act_inst.push_back(n_inst);
+    }
+    else if (!current_inst.compare("if_random")){
+        act_inst.push_back(ran);
+        act_inst.push_back(n_inst);
+    }
+    else if (!current_inst.compare("if_enemy")){
+        act_inst.push_back(enemy);
+        act_inst.push_back(n_inst);
+    }
+    else if(!current_inst.compare("go")){
+        act_inst.push_back(go);
+        act_inst.push_back(n_inst);
+    }
+
+    return act_inst;  
+
+
+}
+
+void Creature::do_action(int action, vector<vector<Creature>> &b, int r, int c){
+    if(action == 0) 
+        hop(b, r, c);    
+    else if (action == 1)
+         left(b, r, c);
+    else if (action == 2)
+        right(b,r, c);
+    else if (action == 3)
+        infect(b, r, c);
+}
+void Creature::do_control(int control, int n_inst, vector<vector<Creature>> &board, int row, int col){
+
+    if (control == 0)
+        if_empty(n_inst, board, row, col);
+    else if (control == 1)
+        if_wall(n_inst, board, row, col);
+    else if (control == 2)
+        if_random(n_inst, board, row, col);
+    else if (control == 3)
+        if_enemy(n_inst, board, row, col);
+    else if (control == 4){
+        // cout << "in go if" << endl;
+
+        go(n_inst, board, row, col);
+    }
+
+} 
+
+
 void Creature::parse_inst(vector<vector<Creature>> &board, int row, int col) {
     // cout << "count " << cnt << endl; 
 
@@ -117,8 +199,13 @@ bool Creature::is_empty(vector<vector<Creature>> &b, int r, int c) {
 
 void Creature::go(int n, vector<vector<Creature>> &b, int row, int col){
     cnt = n;
+    vector<int> instruction = species.get_action(cnt); 
+    if (instruction.size() > 1)
+        do_control(instruction[0], instruction[1], b, row, col); 
+    else 
+        do_action(instruction[0], b, row, col); 
 
-    parse_inst(b, row, col);
+    // parse_inst(b, row, col);
 }
 
 void Creature::hop(vector<vector<Creature>> &b, int row, int col){
@@ -127,28 +214,28 @@ void Creature::hop(vector<vector<Creature>> &b, int row, int col){
     ++cnt; 
     if(is_empty(b, r, c)) {
         if(d == 0){
-            cout << "d = 0" << endl;
+            // cout << "d = 0" << endl;
             // b[r][--c] = b[row][col];
             b[r][--c] = (*this);
 
             b[row][col].remove();
             
         }else if (d == 1){
-            cout << "d = 1" << endl;
+            // cout << "d = 1" << endl;
             
             b[--r][c] = (*this);
 
             // b[--r][c] = b[row][col];
             b[row][col].remove();
         }else if (d == 2){
-            cout << "d = 2" << endl;
+            // cout << "d = 2" << endl;
             // b[r][++c] = b[row][col];
             b[r][++c] = (*this);
 
             b[row][col].remove();
             
         }else if (d == 3){
-            cout << "d = 3" << endl;
+            // cout << "d = 3" << endl;
             // b[++r][c] = b[row][col];
             b[++r][c] = (*this);
 
@@ -158,12 +245,12 @@ void Creature::hop(vector<vector<Creature>> &b, int row, int col){
     }else {
         b[row][col]  = (*this); // because it changes the program counter 
     }
-    cout << "out of hop" << endl;
+    // cout << "out of hop" << endl;
 }
 
 
 void Creature::left(vector<vector<Creature>> &b, int row, int col){
-    cout << "Executing Left" << endl;
+    // cout << "Executing Left" << endl;
     ++cnt; 
     if(d)
         --d;
@@ -279,13 +366,21 @@ Creature::Creature(Species s, Direction direction): species(s), d(direction), cn
 Creature::Creature(): d(-1), cnt(0) {}
 
 void Creature::execute_instr(vector<vector<Creature>> &board, int row, int col) {
-    cout << " In execute_instr creature " << endl;
-    cout << " count before executing turn " << cnt << endl;
+    // cout << " In execute_instr creature " << endl;
+    // cout << " count before executing turn " << cnt << endl; 
+    vector<int> instruction = species.get_action(cnt);
+    if (instruction.size() > 1)
+        do_control(instruction[0], instruction[1], board, row, col); 
+    else 
+        do_action(instruction[0], board, row, col); 
 
-    parse_inst(board, row, col);
-    cout << " out execute_instr creature " << endl;
+    // parse_inst(board, row, col);
+    // cout << " out execute_instr creature " << endl;
 
 }
+
+
+
 
 void Creature::print_species(ostream& w) {
     species.print_name(w);
@@ -324,7 +419,7 @@ void Darwin::addCreature(Creature &creature, int r, int c) {
 }
 
 void Darwin::turn() {
-    cout << "Execute Turn" << endl;
+    // cout << "Execute Turn" << endl;
     vector<vector<Creature>> temp_board;
 
 
@@ -339,7 +434,7 @@ void Darwin::turn() {
                 // Creature temp_creat = board[r][c];
                 // temp_creat.execute_instr(temp_board, r, c);
                 board[r][c].execute_instr(temp_board, r, c);
-                cout << "  on to next creature " << endl;
+                // cout << "  on to next creature " << endl;
 
                 // cout << "temp creat status" << endl;
                 // temp_creat.print();
@@ -354,7 +449,7 @@ void Darwin::turn() {
 }
 
 void Darwin::print(ostream& w) {
-    w << "printing board" << endl;
+    // w << "printing board" << endl;
     w << "  "; 
     for(int col = 0; (unsigned)col < board[0].size(); ++col)
         w << col;

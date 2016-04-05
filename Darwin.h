@@ -10,11 +10,15 @@
 using namespace std;
 
 enum Direction { west, north, east, south };
+enum Action { hop, lft, rit, infect};
+enum Control { empty, wall, ran, enemy, go};
+
 class Species {
     private:
         vector<string> instructions;
         string name;
 
+        
     public:
         Species(string name);
         Species();
@@ -25,6 +29,10 @@ class Species {
         void remove();
         void print(); 
         int instruction_size(); 
+        vector<int> get_action(int& cnt);
+    
+
+
 };
 
 class Creature {
@@ -33,13 +41,16 @@ class Creature {
         int d;
         int cnt;
 
+        void do_action(int action, vector<vector<Creature>> &b, int r, int c);
+        void do_control(int control, int n_inst, vector<vector<Creature>> &b, int r, int c); 
         void parse_inst(vector<vector<Creature>> &b, int r, int c);
+        void do_inst(vector<int> instruction, vector<vector<Creature>> &b, int r, int c);  
         bool is_empty(vector<vector<Creature>> &b, int r, int c);
         void go(int n, vector<vector<Creature>> &b, int r, int c);
         void hop(vector<vector<Creature>> &b, int r, int c);
         void left(vector<vector<Creature>> &b, int r, int c);
         void right(vector<vector<Creature>> &b, int r, int c);
-        void infect(vector<vector<Creature>> &b, int r, int c);
+        void infect(vector<vector<Creature>> &b, int r, int c);  
         void if_empty(int n, vector<vector<Creature>> &b, int r, int c);
         void if_wall(int n, vector<vector<Creature>> &b, int r, int c);
         void if_random(int n, vector<vector<Creature>> &b, int r, int c);

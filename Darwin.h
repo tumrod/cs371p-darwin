@@ -25,10 +25,8 @@ class Species {
         void addInstruction(string instruction);
         void print_name(ostream& w);
         bool equal(Species s);
-        string curr_inst(int index);
         void remove();
         void print(); 
-        int instruction_size(); 
         vector<int> get_action(int& cnt);
     
 
@@ -43,9 +41,9 @@ class Creature {
 
         void do_action(int action, vector<vector<Creature>> &b, int r, int c);
         void do_control(int control, int n_inst, vector<vector<Creature>> &b, int r, int c); 
-        void parse_inst(vector<vector<Creature>> &b, int r, int c);
         void do_inst(vector<int> instruction, vector<vector<Creature>> &b, int r, int c);  
         bool is_empty(vector<vector<Creature>> &b, int r, int c);
+        bool is_wall(vector<vector<Creature>> &b, int r, int c);
         void go(int n, vector<vector<Creature>> &b, int r, int c);
         void hop(vector<vector<Creature>> &b, int r, int c);
         void left(vector<vector<Creature>> &b, int r, int c);
@@ -76,6 +74,7 @@ class Darwin {
         void addCreature(Creature& creature, int r, int c);
         void turn();
         void print(ostream& w);
+        void simulation(int times, ostream& w);
 };
 
 #endif // Darwin_h

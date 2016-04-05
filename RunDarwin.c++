@@ -85,7 +85,6 @@ int main () {
 
     Creature f1 = Creature(f, east);
     d.addCreature(f1, 0, 0);
-    // d.print(cout);
 
     Creature h1 = Creature(h, north);
     Creature h2 = Creature(h, east);
@@ -98,20 +97,9 @@ int main () {
     d.addCreature(h3, 4, 4);
     d.addCreature(h4, 4, 3);
     d.addCreature(f1, 7, 7);    
-    d.print(cout);
-    d.turn();
-    d.print(cout);
 
-    d.turn();
-    d.print(cout);
+    // d.simulation(5, cout);
 
-    d.turn();
-    d.print(cout);
-    
-    d.turn();
-    d.print(cout);
-    // d.turn();
-    // f1.print(); 
     /*
     8x8 Darwin
     Food,   facing east,  at (0, 0)
@@ -140,6 +128,50 @@ int main () {
     Print every grid.
     */
 
+    Darwin d2 = Darwin(7, 9);
+    Species t = Species("trap");
+    t.addInstruction("if_enemy 3");
+    t.addInstruction("left");
+    t.addInstruction("go 0");
+    t.addInstruction("infect");
+    t.addInstruction("go 0");
+    
+    Species r = Species("rover");
+    r.addInstruction("if_enemy 9");
+    r.addInstruction("if_empty 7");
+    r.addInstruction("if_random 5");
+    r.addInstruction("left");
+    r.addInstruction("go 0");
+    r.addInstruction("right");
+    r.addInstruction("go 0");
+    r.addInstruction("hop");
+    r.addInstruction("go 0");
+    r.addInstruction("infect");
+    r.addInstruction("go 0");
+
+    Creature t21 = Creature(t, south);
+    Creature h21 = Creature(h, east);
+    Creature r21 = Creature(r, north);
+    Creature t22 = Creature(t, west);
+
+    d2.addCreature(t21, 0, 0);
+    d2.addCreature(h21, 3, 2);
+    d2.addCreature(r21, 5, 4);
+    d2.addCreature(t22, 6, 8);
+
+    // d2.simulation(5, cout);
+
+    Darwin d3 = Darwin(4, 4);
+    Species b = Species("best");
+    b.addInstruction("if_wall 2");
+    b.addInstruction("if_random 3");
+    b.addInstruction("hop");
+    b.addInstruction("right");
+    b.addInstruction("go 0");
+
+    Creature b1 = Creature(b, east);
+    d3.addCreature(b1, 1, 0);
+    d3.simulation(3, cout);
     // ------------
     // darwin 72x72
     // without best

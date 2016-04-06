@@ -169,14 +169,40 @@ int main () {
     b.addInstruction("right");
     b.addInstruction("go 0");
 
+    Creature f222 = Creature(f, north);
     Creature b1 = Creature(b, east);
     d3.addCreature(b1, 1, 0);
-    // d3.simulation(3, cout);
+    d3.addCreature(f222, 2, 2);
+    Creature x = d3.at(2, 2);
+    cout << "TESTING" << endl;
+    x.print();
+    d3.simulation(3, cout);
     // ------------
     // darwin 72x72
     // without best
     // ------------
+    // Darwin d3 = Darwin(4, 4);
+    // vector<vector<Creature>>::iterator b = d3.begin();
+    // vector<vector<Creature>>::iterator e = d3.end();
+    // Species t = Species("trap");
+    // Creature t21 = Creature(t, south);
+    // d3.addCreature(t21, 0, 0);
+    // while(b != e) {
+    //     vector<Creature> a = *b; 
+    //     vector<Creature>::iterator temp = a.begin();
+    //     vector<Creature>::iterator end = a.end();
+    //     while ( temp != end ){
+    //         if((*temp).is_creature())
+    //             cout << "c" ;
+    //         else
+    //             cout << "." ; 
+    //         ++ temp; 
+    //     }
+    //     cout << endl; 
+    //     ++b; 
+    // }
 
+    // d3.print2(cout);
     cout << "*** Darwin 72x72 without Best ***" << endl;
     srand(0);
     /*

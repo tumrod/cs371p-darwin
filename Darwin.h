@@ -6,8 +6,10 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include "gtest/gtest.h"
 
 using namespace std;
+
 
 enum Direction { west, north, east, south };
 enum Instruction { hop, lft, rit, infect, if_empty, if_wall, if_random, if_enemy, go};
@@ -16,7 +18,6 @@ class Species {
     private:
         vector<string> instructions;
         string name;
-
         
     public:
         Species(string name);
@@ -27,9 +28,6 @@ class Species {
         void remove();
         void print(); 
         vector<int> get_action(int& cnt);
-    
-
-
 };
 
 class Creature {
@@ -38,8 +36,6 @@ class Creature {
         int d;
         int cnt;
 
-        // void do_action(int action, vector<vector<Creature>> &b, int r, int c);
-        // void do_control(int control, int n_inst, vector<vector<Creature>> &b, int r, int c); 
         void do_inst(vector<int> instruction, vector<vector<Creature>> &b, int r, int c);  
         bool is_empty(vector<vector<Creature>> &b, int r, int c);
         bool is_wall(vector<vector<Creature>> &b, int r, int c);
@@ -63,16 +59,23 @@ class Creature {
         void print();
 };
 
+
 class Darwin {
+    // template <typename Iterator>
+    friend class DarwinTest;
     private:
         int row;
         int column;
         vector< vector<Creature>> board;
+        FRIEND_TEST(DarwinTest, add_creature_1);
     public:
         Darwin(int row, int col);
         void addCreature(Creature& creature, int r, int c);
         void turn();
         void print(ostream& w);
+        Creature at(int r, int c);
+        vector<vector<Creature>>::iterator begin();
+        vector<vector<Creature>>::iterator end();
         void simulation(int times, ostream& w);
 };
 

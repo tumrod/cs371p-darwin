@@ -7,7 +7,7 @@
 #include <string.h>
 #include <boost/algorithm/string.hpp>
 #include "Darwin.h"
-
+#include "gtest/gtest.h"
 using namespace std;
 
 
@@ -433,21 +433,40 @@ void Darwin::turn() {
 
 }
 
+vector<vector<Creature>>::iterator Darwin::begin() {
+    return board.begin();
+}
+
+vector<vector<Creature>>::iterator Darwin::end() {
+    return board.end();
+}
+
+Creature Darwin::at(int r, int c) {
+    if (r < 0 || (unsigned)r >= board.size() || c < 0 || (unsigned)c >= board[0].size())
+        throw out_of_range("Out of Range");
+    return board[r][c]; 
+}
+
 void Darwin::print(ostream& w) {
-    // w << "printing board" << endl;
+    vector<vector<Creature>>::iterator row;
+    vector<Creature>::iterator col;
+
     w << "  "; 
     for(int col = 0; (unsigned)col < board[0].size(); ++col)
         w << col%10;
     w << endl;
-    for(int r = 0; (unsigned)r < board.size(); ++r) {
+    int r = 0;
+
+    for(row = (*this).begin(); row != (*this).end(); ++row) {
         w << r%10 << " ";
-        for(int c = 0; (unsigned)c < board[0].size(); ++c) {
-            if(board[r][c].is_creature())
-                board[r][c].print_species(w);
+        for(col = (*row).begin(); col != (*row).end(); ++col) {
+            if((*col).is_creature())
+                (*col).print_species(w);
             else
                 w << ".";
         }
-        w << endl;
+        w << endl; 
+        ++r;
     }
 }
 

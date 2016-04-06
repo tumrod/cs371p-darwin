@@ -161,22 +161,22 @@ int main () {
 
     d2.simulation(5, cout);
 
-    Darwin d3 = Darwin(4, 4);
-    Species b = Species("best");
-    b.addInstruction("if_wall 2");
-    b.addInstruction("if_random 3");
-    b.addInstruction("hop");
-    b.addInstruction("right");
-    b.addInstruction("go 0");
+    // Darwin d3 = Darwin(4, 4);
+    // Species b = Species("best");
+    // b.addInstruction("if_wall 2");
+    // b.addInstruction("if_random 3");
+    // b.addInstruction("hop");
+    // b.addInstruction("right");
+    // b.addInstruction("go 0");
 
-    Creature f222 = Creature(f, north);
-    Creature b1 = Creature(b, east);
-    d3.addCreature(b1, 1, 0);
-    d3.addCreature(f222, 2, 2);
-    Creature x = d3.at(2, 2);
-    cout << "TESTING" << endl;
-    x.print();
-    d3.simulation(3, cout);
+    // Creature f222 = Creature(f, north);
+    // Creature b1 = Creature(b, east);
+    // d3.addCreature(b1, 1, 0);
+    // d3.addCreature(f222, 2, 2);
+    // Creature x = d3.at(2, 2);
+    // cout << "TESTING" << endl;
+    // x.print();
+    // d3.simulation(3, cout);
     // ------------
     // darwin 72x72
     // without best

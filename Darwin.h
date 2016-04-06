@@ -15,6 +15,7 @@ enum Direction { west, north, east, south };
 enum Instruction { hop, lft, rit, infect, if_empty, if_wall, if_random, if_enemy, go};
 
 class Species {
+    friend class SpeciesTest;
     private:
         vector<string> instructions;
         string name;
@@ -31,11 +32,11 @@ class Species {
 };
 
 class Creature {
+    friend class CreatureTest;
     private:
         Species species;
         int d;
         int cnt;
-
         void do_inst(vector<int> instruction, vector<vector<Creature>> &b, int r, int c);  
         bool is_empty(vector<vector<Creature>> &b, int r, int c);
         bool is_wall(vector<vector<Creature>> &b, int r, int c);
@@ -49,6 +50,43 @@ class Creature {
         void ex_if_random(int n, vector<vector<Creature>> &b, int r, int c);
         void ex_if_enemy(int n, vector<vector<Creature>> &b, int r, int c);
 
+        FRIEND_TEST(CreatureTest, do_inst_1);
+        FRIEND_TEST(CreatureTest, do_inst_2);
+        FRIEND_TEST(CreatureTest, do_inst_3);
+        FRIEND_TEST(CreatureTest, is_empty_1);
+        FRIEND_TEST(CreatureTest, is_empty_2);
+        FRIEND_TEST(CreatureTest, is_empty_3);
+        FRIEND_TEST(CreatureTest, is_wall_1);
+        FRIEND_TEST(CreatureTest, is_wall_2);
+        FRIEND_TEST(CreatureTest, is_wall_3);
+        FRIEND_TEST(CreatureTest, ex_go_1);
+        FRIEND_TEST(CreatureTest, ex_go_2);   
+        FRIEND_TEST(CreatureTest, ex_go_3);   
+        FRIEND_TEST(CreatureTest, ex_hop_1);
+        FRIEND_TEST(CreatureTest, ex_hop_2);
+        FRIEND_TEST(CreatureTest, ex_hop_3);
+        FRIEND_TEST(CreatureTest, ex_left_1);
+        FRIEND_TEST(CreatureTest, ex_left_2);
+        FRIEND_TEST(CreatureTest, ex_left_3);
+        FRIEND_TEST(CreatureTest, ex_right_1);
+        FRIEND_TEST(CreatureTest, ex_right_2);
+        FRIEND_TEST(CreatureTest, ex_right_3);
+        FRIEND_TEST(CreatureTest, ex_infect_1);
+        FRIEND_TEST(CreatureTest, ex_infect_2);
+        FRIEND_TEST(CreatureTest, ex_infect_3);
+        FRIEND_TEST(CreatureTest, ex_if_empty_1);
+        FRIEND_TEST(CreatureTest, ex_if_empty_2);
+        FRIEND_TEST(CreatureTest, ex_if_empty_3);
+        FRIEND_TEST(CreatureTest, ex_if_wall_1);
+        FRIEND_TEST(CreatureTest, ex_if_wall_2);
+        FRIEND_TEST(CreatureTest, ex_if_wall_3);
+        FRIEND_TEST(CreatureTest, ex_if_random_1);
+        FRIEND_TEST(CreatureTest, ex_if_random_2);
+        FRIEND_TEST(CreatureTest, ex_if_random_3);
+        FRIEND_TEST(CreatureTest, ex_if_enemy_1);
+        FRIEND_TEST(CreatureTest, ex_if_enemy_2);
+        FRIEND_TEST(CreatureTest, ex_if_enemy_3);
+
     public:
         Creature(Species s, Direction direction);
         Creature();
@@ -61,13 +99,10 @@ class Creature {
 
 
 class Darwin {
-    // template <typename Iterator>
-    friend class DarwinTest;
     private:
         int row;
         int column;
         vector< vector<Creature>> board;
-        FRIEND_TEST(DarwinTest, add_creature_1);
     public:
         Darwin(int row, int col);
         void addCreature(Creature& creature, int r, int c);

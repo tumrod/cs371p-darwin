@@ -399,6 +399,9 @@ Darwin::Darwin(int row, int col) {
 
 void Darwin::addCreature(Creature &creature, int r, int c) {
     // cout << "Adding Creature" << endl;
+    if (r < 0 || (unsigned)r >= board.size() || c < 0 || (unsigned)c >= board[0].size())
+        throw out_of_range("Out of Range");
+
     board[r][c] = creature;
     // board[r][c].print();
 }
@@ -406,27 +409,12 @@ void Darwin::addCreature(Creature &creature, int r, int c) {
 void Darwin::turn() {
     // cout << "Execute Turn" << endl;
     vector<vector<Creature>> temp_board;
-
-
     temp_board = board;
-
 
     for(int r = 0; (unsigned)r < board.size(); ++r) {
         for(int c = 0; (unsigned)c < board[0].size(); ++c) {
-            if(board[r][c].is_creature()) {
-                
-                
-                // Creature temp_creat = board[r][c];
-                // temp_creat.execute_instr(temp_board, r, c);
+            if(board[r][c].is_creature())
                 board[r][c].execute_instr(temp_board, r, c);
-                // cout << "  on to next creature " << endl;
-
-                // cout << "temp creat status" << endl;
-                // temp_creat.print();
-                // board[temp[0]][temp[1]] = c;
-                // board[r][c].remove();
-            }
-                
         }
     }
     board = temp_board;

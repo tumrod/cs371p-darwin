@@ -66,19 +66,19 @@ vector<int> Species::get_action(int &cnt){
     else if (!current_inst.compare("infect"))
         act_inst.push_back(infect);
     else if (!current_inst.compare("if_empty")){
-        act_inst.push_back(empty);
+        act_inst.push_back(if_empty);
         act_inst.push_back(n_inst);
     }   
     else if (!current_inst.compare("if_wall")){
-        act_inst.push_back(wall);
+        act_inst.push_back(if_wall);
         act_inst.push_back(n_inst);
     }
     else if (!current_inst.compare("if_random")){
-        act_inst.push_back(ran);
+        act_inst.push_back(if_random);
         act_inst.push_back(n_inst);
     }
     else if (!current_inst.compare("if_enemy")){
-        act_inst.push_back(enemy);
+        act_inst.push_back(if_enemy);
         act_inst.push_back(n_inst);
     }
     else if(!current_inst.compare("go")){
@@ -91,32 +91,68 @@ vector<int> Species::get_action(int &cnt){
 
 }
 
-void Creature::do_action(int action, vector<vector<Creature>> &b, int r, int c){
-    if(action == 0) 
-        hop(b, r, c);    
-    else if (action == 1)
-         left(b, r, c);
-    else if (action == 2)
-        right(b,r, c);
-    else if (action == 3)
-        infect(b, r, c);
-}
-void Creature::do_control(int control, int n_inst, vector<vector<Creature>> &board, int row, int col){
+// void Creature::do_action(int action, vector<vector<Creature>> &b, int r, int c){
+//     if(action == 0) 
+//         hop(b, r, c);    
+//     else if (action == 1)
+//          left(b, r, c);
+//     else if (action == 2)
+//         right(b,r, c);
+//     else if (action == 3)
+//         infect(b, r, c);
+// }
+// void Creature::do_control(int control, int n_inst, vector<vector<Creature>> &board, int row, int col){
 
-    if (control == 0)
-        if_empty(n_inst, board, row, col);
-    else if (control == 1)
-        if_wall(n_inst, board, row, col);
-    else if (control == 2)
-        if_random(n_inst, board, row, col);
-    else if (control == 3)
-        if_enemy(n_inst, board, row, col);
-    else if (control == 4){
-        // cout << "in go if" << endl;
+//     if (control == 0)
+//         if_empty(n_inst, board, row, col);
+//     else if (control == 1)
+//         if_wall(n_inst, board, row, col);
+//     else if (control == 2)
+//         if_random(n_inst, board, row, col);
+//     else if (control == 3)
+//         if_enemy(n_inst, board, row, col);
+//     else if (control == 4){
+//         // cout << "in go if" << endl;
 
-        go(n_inst, board, row, col);
+//         go(n_inst, board, row, col);
+//     }
+
+// } 
+
+void Creature::do_inst(vector<int> instruction, vector<vector<Creature>> &b, int r, int c){
+    int inst = instruction[0]; 
+    int n_inst; 
+    if ( instruction.size() > 1)
+        n_inst = instruction[1];
+    switch(inst){
+        case hop:
+            ex_hop(b, r, c);
+            break;  
+        case lft:
+            ex_left(b, r, c);
+            break;
+        case rit:
+            ex_right(b,r, c);
+            break;
+        case infect:
+            ex_infect(b, r, c);
+            break;
+        case if_empty:
+            ex_if_empty(n_inst, b, r, c);
+            break;
+        case if_wall:
+            ex_if_wall(n_inst, b, r, c);
+            break;
+        case if_random:
+            ex_if_random(n_inst, b, r, c);
+            break;
+        case if_enemy:
+            ex_if_enemy(n_inst, b, r, c);
+            break;
+        case go:
+            ex_go(n_inst, b, r, c);
+            break;
     }
-
 } 
 
 bool Creature::is_empty(vector<vector<Creature>> &b, int r, int c) {
@@ -158,18 +194,15 @@ bool Creature::is_wall(vector<vector<Creature>> &b, int r, int c) {
     }
 }
 
-void Creature::go(int n, vector<vector<Creature>> &b, int row, int col){
+void Creature::ex_go(int n, vector<vector<Creature>> &b, int row, int col){
     cnt = n;
     vector<int> instruction = species.get_action(cnt); 
-    if (instruction.size() > 1)
-        do_control(instruction[0], instruction[1], b, row, col); 
-    else 
-        do_action(instruction[0], b, row, col); 
+    do_inst(instruction, b, row, col); 
 
     // parse_inst(b, row, col);
 }
 
-void Creature::hop(vector<vector<Creature>> &b, int row, int col){
+void Creature::ex_hop(vector<vector<Creature>> &b, int row, int col){
     int r = row;
     int c = col;
     ++cnt; 
@@ -210,7 +243,7 @@ void Creature::hop(vector<vector<Creature>> &b, int row, int col){
 }
 
 
-void Creature::left(vector<vector<Creature>> &b, int row, int col){
+void Creature::ex_left(vector<vector<Creature>> &b, int row, int col){
     // cout << "Executing Left" << endl;
     ++cnt; 
     if(d)
@@ -221,7 +254,7 @@ void Creature::left(vector<vector<Creature>> &b, int row, int col){
     b[row][col] = (*this); 
 }
 
-void Creature::right(vector<vector<Creature>> &b, int row, int col){
+void Creature::ex_right(vector<vector<Creature>> &b, int row, int col){
     ++cnt; 
     if(d == 3)
         d = 0;
@@ -231,7 +264,7 @@ void Creature::right(vector<vector<Creature>> &b, int row, int col){
 
 }
 
-void Creature::infect(vector<vector<Creature>> &b, int row, int col){
+void Creature::ex_infect(vector<vector<Creature>> &b, int row, int col){
     // (*this).print();
     // cout << "\tin infect()" << endl;
     int r = row;
@@ -261,32 +294,32 @@ void Creature::infect(vector<vector<Creature>> &b, int row, int col){
     
 }
 
-void Creature::if_empty(int n, vector<vector<Creature>> &b, int r, int c){
+void Creature::ex_if_empty(int n, vector<vector<Creature>> &b, int r, int c){
     if(is_empty(b, r, c))
-        go (n, b, r, c); 
+        ex_go (n, b, r, c); 
     else
-        go (++cnt, b, r, c);
+        ex_go (++cnt, b, r, c);
 }
 
 
-void Creature::if_wall(int n, vector<vector<Creature>> &b, int row, int col){
+void Creature::ex_if_wall(int n, vector<vector<Creature>> &b, int row, int col){
     bool wall = is_wall(b, row, col);
     if(wall)
-        go (n, b, row, col);
+        ex_go (n, b, row, col);
     else
-        go (++cnt, b, row, col);
+        ex_go (++cnt, b, row, col);
 }
 
-void Creature::if_random(int n, vector<vector<Creature>> &b, int r, int c){
+void Creature::ex_if_random(int n, vector<vector<Creature>> &b, int r, int c){
     int ran1 = rand()%2;
     if(ran1) 
-        go(n, b, r, c);
+        ex_go(n, b, r, c);
     else
-        go(++cnt, b, r, c);
+        ex_go(++cnt, b, r, c);
 
 }
 
-void Creature::if_enemy(int n, vector<vector<Creature>> &b, int row, int col){
+void Creature::ex_if_enemy(int n, vector<vector<Creature>> &b, int row, int col){
     // (*this).print();
     // cout <<"\tin if_enemy()" << endl;
     int r = row;
@@ -294,17 +327,17 @@ void Creature::if_enemy(int n, vector<vector<Creature>> &b, int row, int col){
     if (!is_empty(b, row, col) && !is_wall(b, row, col)) {
         // cout << "is_enemy() should not be here!" << endl; 
         if((d == 0) && (!species.equal(b[r][--c].species)))
-            go (n, b, row, col);
+            ex_go (n, b, row, col);
         else if ((d == 1) && (!species.equal(b[--r][c].species)))
-            go (n, b, row, col);
+            ex_go (n, b, row, col);
 
         else if ((d == 2) && (!species.equal(b[r][++c].species)))
-            go (n, b, row, col);
+            ex_go (n, b, row, col);
 
         else if ((d == 3) && (!species.equal(b[++r][c].species)))
-            go (n, b, row, col);
+            ex_go (n, b, row, col);
     } else {
-        go (++cnt, b, row, col);
+        ex_go (++cnt, b, row, col);
     }
 }
 
@@ -319,10 +352,12 @@ void Creature::execute_instr(vector<vector<Creature>> &board, int row, int col) 
     // cout << " In execute_instr creature " << endl;
     // cout << " count before executing turn " << cnt << endl; 
     vector<int> instruction = species.get_action(cnt);
-    if (instruction.size() > 1)
-        do_control(instruction[0], instruction[1], board, row, col); 
-    else 
-        do_action(instruction[0], board, row, col); 
+    do_inst(instruction, board, row, col); 
+
+    // if (instruction.size() > 1)
+    //     do_control(instruction[0], instruction[1], board, row, col); 
+    // else 
+    //     do_action(instruction[0], board, row, col); 
 
     // parse_inst(board, row, col);
     // cout << " out execute_instr creature " << endl;

@@ -98,7 +98,7 @@ int main () {
     d.addCreature(h4, 4, 3);
     d.addCreature(f1, 7, 7);    
 
-    // d.simulation(5, cout);
+    d.simulation(5, cout);
 
     /*
     8x8 Darwin
@@ -159,7 +159,7 @@ int main () {
     d2.addCreature(r21, 5, 4);
     d2.addCreature(t22, 6, 8);
 
-    // d2.simulation(5, cout);
+    d2.simulation(5, cout);
 
     Darwin d3 = Darwin(4, 4);
     Species b = Species("best");
@@ -171,7 +171,7 @@ int main () {
 
     Creature b1 = Creature(b, east);
     d3.addCreature(b1, 1, 0);
-    d3.simulation(3, cout);
+    // d3.simulation(3, cout);
     // ------------
     // darwin 72x72
     // without best

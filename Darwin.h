@@ -10,8 +10,7 @@
 using namespace std;
 
 enum Direction { west, north, east, south };
-enum Action { hop, lft, rit, infect};
-enum Control { empty, wall, ran, enemy, go};
+enum Instruction { hop, lft, rit, infect, if_empty, if_wall, if_random, if_enemy, go};
 
 class Species {
     private:
@@ -39,20 +38,20 @@ class Creature {
         int d;
         int cnt;
 
-        void do_action(int action, vector<vector<Creature>> &b, int r, int c);
-        void do_control(int control, int n_inst, vector<vector<Creature>> &b, int r, int c); 
+        // void do_action(int action, vector<vector<Creature>> &b, int r, int c);
+        // void do_control(int control, int n_inst, vector<vector<Creature>> &b, int r, int c); 
         void do_inst(vector<int> instruction, vector<vector<Creature>> &b, int r, int c);  
         bool is_empty(vector<vector<Creature>> &b, int r, int c);
         bool is_wall(vector<vector<Creature>> &b, int r, int c);
-        void go(int n, vector<vector<Creature>> &b, int r, int c);
-        void hop(vector<vector<Creature>> &b, int r, int c);
-        void left(vector<vector<Creature>> &b, int r, int c);
-        void right(vector<vector<Creature>> &b, int r, int c);
-        void infect(vector<vector<Creature>> &b, int r, int c);  
-        void if_empty(int n, vector<vector<Creature>> &b, int r, int c);
-        void if_wall(int n, vector<vector<Creature>> &b, int r, int c);
-        void if_random(int n, vector<vector<Creature>> &b, int r, int c);
-        void if_enemy(int n, vector<vector<Creature>> &b, int r, int c);
+        void ex_go(int n, vector<vector<Creature>> &b, int r, int c);
+        void ex_hop(vector<vector<Creature>> &b, int r, int c);
+        void ex_left(vector<vector<Creature>> &b, int r, int c);
+        void ex_right(vector<vector<Creature>> &b, int r, int c);
+        void ex_infect(vector<vector<Creature>> &b, int r, int c);  
+        void ex_if_empty(int n, vector<vector<Creature>> &b, int r, int c);
+        void ex_if_wall(int n, vector<vector<Creature>> &b, int r, int c);
+        void ex_if_random(int n, vector<vector<Creature>> &b, int r, int c);
+        void ex_if_enemy(int n, vector<vector<Creature>> &b, int r, int c);
 
     public:
         Creature(Species s, Direction direction);

@@ -25,7 +25,9 @@ class Species {
         Species();
         void addInstruction(string instruction);
         void print_name(ostream& w);
-        bool equal(Species s);
+        bool operator==(const Species& s) const;
+        bool operator!=(const Species& s) const;
+        // bool equal(const Species& s) const;
         void remove();
         void print(ostream& w); 
         vector<int> get_action(int& cnt);
@@ -87,6 +89,7 @@ class Creature {
         FRIEND_TEST(CreatureTest, ex_if_enemy_2);
         FRIEND_TEST(CreatureTest, ex_if_enemy_3);
 
+        FRIEND_TEST(CreatureTest, temp);
     public:
         Creature(Species s, Direction direction);
         Creature();
@@ -95,6 +98,7 @@ class Creature {
         bool is_creature();
         void remove();
         void print();
+        bool operator==(const Creature& rhs) const;
 };
 
 
@@ -103,6 +107,9 @@ class Darwin {
         int row;
         int column;
         vector< vector<Creature>> board;
+        FRIEND_TEST(DarwinTest, darwin_1);
+        FRIEND_TEST(DarwinTest, darwin_2);
+        FRIEND_TEST(DarwinTest, darwin_3);
     public:
         Darwin(int row, int col);
         void addCreature(Creature& creature, int r, int c);

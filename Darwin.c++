@@ -22,13 +22,35 @@ void Species::print_name(ostream& w) {
     if (name.size() > 0)
         w << name.at(0);
     else 
-        w << name <<endl; 
+        w << name; 
 }
 
-bool Species::equal(Species s){
-    if (!(name.compare(s.name)) && name.size() > 0)
-        return true;
-    return false;
+// bool Species::equal(const Species& s) const{
+//     if ((name.compare(s.name)) && name.size() <= 0)
+//         return false;
+
+//     for (int i = 0; (unsigned) i < instructions.size(); ++i) {
+//         if(instructions[i].compare(s.instructions[i]))
+//             return false;
+//     }
+
+//     return true;
+// }
+
+bool Species::operator==(const Species& s) const{
+    if ((name.compare(s.name)) || name.size() <= 0)
+        return false;
+
+    for (int i = 0; (unsigned) i < instructions.size(); ++i) {
+        if(instructions[i].compare(s.instructions[i]))
+            return false;
+    }
+
+    return true;
+}
+
+bool Species::operator!=(const Species& s) const{
+    return !((*this) == s);
 }
 
 void Species::remove() {
@@ -277,19 +299,19 @@ void Creature::ex_infect(vector<vector<Creature>> &b, int row, int col){
     ++cnt;
 
     if(!is_empty(b, r, c)) {
-        if(d == 0 && !(species.equal(b[r][--c].species))) {
+        if(d == 0 && (species != b[r][--c].species)) {
             b[r][c].species = species;
             b[r][c].cnt = 0;
             
-        }else if (d == 1 && !(species.equal(b[--r][c].species))) {
+        }else if (d == 1 && (species != b[--r][c].species)) {
             b[r][c].species = species;
             b[r][c].cnt = 0;
 
-        }else if (d == 2 && !(species.equal(b[r][++c].species))) {
+        }else if (d == 2 && (species != b[r][++c].species)) {
             b[r][c].species = species;
             b[r][c].cnt = 0;
             
-        }else if (d == 3 && !(species.equal(b[++r][c].species))) {
+        }else if (d == 3 && (species != b[++r][c].species)) {
             b[r][c].species = species;
             b[r][c].cnt = 0;
         }
@@ -331,15 +353,15 @@ void Creature::ex_if_enemy(int n, vector<vector<Creature>> &b, int row, int col)
     int c = col;
     if (!is_empty(b, row, col) && !is_wall(b, row, col)) {
         // cout << "is_enemy() should not be here!" << endl; 
-        if((d == 0) && (!species.equal(b[r][--c].species)))
+        if((d == 0) && (species != (b[r][--c].species)))
             ex_go (n, b, row, col);
-        else if ((d == 1) && (!species.equal(b[--r][c].species)))
-            ex_go (n, b, row, col);
-
-        else if ((d == 2) && (!species.equal(b[r][++c].species)))
+        else if ((d == 1) && (species != (b[--r][c].species)))
             ex_go (n, b, row, col);
 
-        else if ((d == 3) && (!species.equal(b[++r][c].species)))
+        else if ((d == 2) && (species != (b[r][++c].species)))
+            ex_go (n, b, row, col);
+
+        else if ((d == 3) && (species != (b[++r][c].species)))
             ex_go (n, b, row, col);
     } else {
         ex_go (++cnt, b, row, col);
@@ -394,6 +416,12 @@ void Creature::print() {
     species.print(cout);
     cout << "count: " << cnt << endl;
     cout << "direction: " << d << endl;
+}
+
+bool Creature::operator==(const Creature& rhs) const {
+    if(cnt != rhs.cnt || d != rhs.d || species != rhs.species)
+        return false;
+    return true;
 }
 
 Darwin::Darwin(int row, int col) {

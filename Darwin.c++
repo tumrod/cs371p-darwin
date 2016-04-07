@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <string.h>
+#include <stdexcept>
 #include <boost/algorithm/string.hpp>
 #include "Darwin.h"
 #include "gtest/gtest.h"
@@ -38,7 +39,7 @@ void Species::print_name(ostream& w) {
 // }
 
 bool Species::operator==(const Species& s) const{
-    if ((name.compare(s.name)) || name.size() <= 0)
+    if ((name.compare(s.name)))
         return false;
 
     for (int i = 0; (unsigned) i < instructions.size(); ++i) {
@@ -369,7 +370,7 @@ void Creature::ex_if_enemy(int n, vector<vector<Creature>> &b, int row, int col)
 }
 
 
-Creature::Creature(Species s, Direction direction): species(s), d(direction), cnt(0) {
+Creature::Creature(Species s, int direction): species(s), d(direction), cnt(0) {
     // cout << "Created Creature " << direction << endl;
     // s.print();
 }
@@ -435,6 +436,9 @@ void Darwin::addCreature(Creature &creature, int r, int c) {
     if (r < 0 || (unsigned)r >= board.size() || c < 0 || (unsigned)c >= board[0].size())
         throw out_of_range("Out of Range");
 
+    if (board[r][c].is_creature())
+        throw std::invalid_argument("Creature already exists"); 
+
     board[r][c] = creature;
     // board[r][c].print();
 }
@@ -458,11 +462,25 @@ vector<vector<Creature>>::iterator Darwin::begin() {
     return board.begin();
 }
 
+const vector<vector<Creature>>::iterator Darwin::begin() const {
+    return const_cast<Darwin*>(this)->begin();
+}
+
 vector<vector<Creature>>::iterator Darwin::end() {
     return board.end();
 }
 
+const vector<vector<Creature>>::iterator Darwin::end() const{
+    return const_cast<Darwin*>(this)->end();
+}
+
 Creature Darwin::at(int r, int c) {
+    if (r < 0 || (unsigned)r >= board.size() || c < 0 || (unsigned)c >= board[0].size())
+        throw out_of_range("Out of Range");
+    return board[r][c]; 
+}
+
+const Creature Darwin::at(int r, int c) const {
     if (r < 0 || (unsigned)r >= board.size() || c < 0 || (unsigned)c >= board[0].size())
         throw out_of_range("Out of Range");
     return board[r][c]; 

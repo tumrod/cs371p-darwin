@@ -220,6 +220,205 @@ int main () {
     Print the first 10 grids          (i.e. 0, 1, 2...9).
     Print every 100th grid after that (i.e. 100, 200, 300...1000).
     */
+    Darwin d3 = Darwin(72, 72);
+
+    int row = rand()%5184; 
+    int dir; 
+
+    for (int i < 0; i < 10; ++i){
+        dir = rand()%4;
+        Creature t = Creature(t, dir);
+        d3.addCreature(t, ) 
+
+    }
+
+    for (int i < 0; i < 10; ++i){
+        dir = rand()%4;
+        Creature h = Creature(h, dir);
+        d3.addCreature(h, ) 
+
+    }
+
+    for (int i < 0; i < 10; ++i){
+        dir = rand()%4;
+        Creature r = Creature(r, dir);
+        d3.addCreature(r, ) 
+
+    }
+
+    for (int i < 0; i < 10; ++i){
+        dir = rand()%4;
+        Creature f = Creature(f, dir);
+        d3.addCreature(f, ) 
+
+    }
+
+    // Creature t31 = Creature(t, dir);
+    // d3.addCreature(t31, 0, 0);
+    // dir = rand()%4;
+    // Creature t32 = Creature(t, dir);
+    // d3.addCreature(t31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature t33 = Creature(t, dir);
+    // d3.addCreature(t31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature t34 = Creature(t, dir);
+    // d3.addCreature(t31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature t35 = Creature(t, dir);
+    // d3.addCreature(t31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature t36 = Creature(t, dir);
+    // d3.addCreature(t31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature t37 = Creature(t, dir);
+    // d3.addCreature(t31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature t38 = Creature(t, dir);
+    // d3.addCreature(t31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature t39 = Creature(t, dir);
+    // d3.addCreature(t31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature t30 = Creature(t, dir);
+    // d3.addCreature(t31, 0, 0);
+
+    // dir = rand()%4;
+
+
+    // Creature h30 = Creature(h, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature h31 = Creature(h, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature h32 = Creature(h, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature h33 = Creature(h, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature h34 = Creature(h, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature h35 = Creature(h, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature h36 = Creature(h, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature h37 = Creature(h, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature h38 = Creature(h, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature h39 = Creature(h, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+
+    // Creature r30 = Creature(r, dir);
+    // d3.addCreature(r31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature r31 = Creature(r, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature r32 = Creature(r, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature r33 = Creature(r, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature r34 = Creature(r, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature r35 = Creature(r, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature r36 = Creature(r, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature r37 = Creature(r, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature r38 = Creature(r, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature r39 = Creature(r, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+
+    // Creature f30 = Creature(f, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature f31 = Creature(f, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature f32 = Creature(f, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature f33 = Creature(f, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature f34 = Creature(f, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature f35 = Creature(f, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature f36 = Creature(f, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature f37 = Creature(f, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature f38 = Creature(f, dir);
+    // d3.addCreature(h31, 0, 0);
+
+    // dir = rand()%4;
+    // Creature f39 = Creature(f, dir);
+    // d3.addCreature(h31, 0, 0);
+
+
+
+
+
 
     // ------------
     // darwin 72x72

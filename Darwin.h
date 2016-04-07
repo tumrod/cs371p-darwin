@@ -91,7 +91,7 @@ class Creature {
 
         FRIEND_TEST(CreatureTest, temp);
     public:
-        Creature(Species s, Direction direction);
+        Creature(Species s, int direction);
         Creature();
         void execute_instr(vector<vector<Creature>> &board, int row, int col);
         void print_species(ostream& w);
@@ -115,8 +115,11 @@ class Darwin {
         void addCreature(Creature& creature, int r, int c);
         void turn();
         void print(ostream& w);
+        const Creature at(int r, int c) const;
         Creature at(int r, int c);
+        const vector<vector<Creature>>::iterator begin() const;
         vector<vector<Creature>>::iterator begin();
+        const vector<vector<Creature>>::iterator end() const;
         vector<vector<Creature>>::iterator end();
         void simulation(int times, ostream& w);
 };

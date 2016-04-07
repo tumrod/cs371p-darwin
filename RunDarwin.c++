@@ -222,36 +222,36 @@ int main () {
     */
     Darwin d3 = Darwin(72, 72);
 
-    int row = rand()%5184; 
-    int dir; 
+    // int row = rand()%5184; 
+    // int dir; 
 
-    for (int i < 0; i < 10; ++i){
-        dir = rand()%4;
-        Creature t = Creature(t, dir);
-        d3.addCreature(t, ) 
+    // for (int i < 0; i < 10; ++i){
+    //     dir = rand()%4;
+    //     Creature t = Creature(t, dir);
+    //     d3.addCreature(t, ) 
 
-    }
+    // }
 
-    for (int i < 0; i < 10; ++i){
-        dir = rand()%4;
-        Creature h = Creature(h, dir);
-        d3.addCreature(h, ) 
+    // for (int i < 0; i < 10; ++i){
+    //     dir = rand()%4;
+    //     Creature h = Creature(h, dir);
+    //     d3.addCreature(h, ) 
 
-    }
+    // }
 
-    for (int i < 0; i < 10; ++i){
-        dir = rand()%4;
-        Creature r = Creature(r, dir);
-        d3.addCreature(r, ) 
+    // for (int i < 0; i < 10; ++i){
+    //     dir = rand()%4;
+    //     Creature r = Creature(r, dir);
+    //     d3.addCreature(r, ) 
 
-    }
+    // }
 
-    for (int i < 0; i < 10; ++i){
-        dir = rand()%4;
-        Creature f = Creature(f, dir);
-        d3.addCreature(f, ) 
+    // for (int i < 0; i < 10; ++i){
+    //     dir = rand()%4;
+    //     Creature f = Creature(f, dir);
+    //     d3.addCreature(f, ) 
 
-    }
+    // }
 
     // Creature t31 = Creature(t, dir);
     // d3.addCreature(t31, 0, 0);

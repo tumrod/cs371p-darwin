@@ -27,7 +27,6 @@ class Species {
         void print_name(ostream& w);
         bool operator==(const Species& s) const;
         bool operator!=(const Species& s) const;
-        // bool equal(const Species& s) const;
         void remove();
         void print(ostream& w); 
         vector<int> get_action(int& cnt);
@@ -88,8 +87,9 @@ class Creature {
         FRIEND_TEST(CreatureTest, ex_if_enemy_1);
         FRIEND_TEST(CreatureTest, ex_if_enemy_2);
         FRIEND_TEST(CreatureTest, ex_if_enemy_3);
-
-        FRIEND_TEST(CreatureTest, temp);
+        FRIEND_TEST(CreatureTest, creature_1);
+        FRIEND_TEST(CreatureTest, creature_2);
+        FRIEND_TEST(CreatureTest, creature_3);
     public:
         Creature(Species s, int direction);
         Creature();
@@ -97,7 +97,6 @@ class Creature {
         void print_species(ostream& w);
         bool is_creature();
         void remove();
-        void print();
         bool operator==(const Creature& rhs) const;
 };
 

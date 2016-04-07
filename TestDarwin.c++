@@ -5,10 +5,99 @@
 #include <sstream>
 #include <string>
 
+// ------------
+// SpeciesTest
+// ------------
 
-// ----------
+// TEST(SpeciesTest, species_1) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(SpeciesTest, species_2) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(SpeciesTest, species_3) {
+
+//     ASSERT_TRUE(true);
+// }
+// TEST(SpeciesTest, addInstruction_1){
+    
+// }
+
+// TEST(SpeciesTest, addInstruction_2){
+    
+// }
+
+// TEST(SpeciesTest, addInstruction_3){
+    
+// }
+
+// TEST(SpeciesTest, print_name_1){
+    
+// }
+
+// TEST(SpeciesTest, print_name_2){
+    
+// }
+
+// TEST(SpeciesTest, print_name_3){
+    
+// }
+
+// TEST(SpeciesTest, equal_1){
+    
+// }
+
+// TEST(SpeciesTest, equal_2){
+    
+// }
+
+// TEST(SpeciesTest, equal_3){
+    
+// }
+
+// TEST(SpeciesTest, remove_1){
+    
+// }
+
+// TEST(SpeciesTest, remove_2){
+    
+// }
+
+// TEST(SpeciesTest, remove_3){
+    
+// }
+
+// TEST(SpeciesTest, print_1){
+    
+// }
+
+// TEST(SpeciesTest, print_2){
+    
+// }
+
+// TEST(SpeciesTest, print_3){
+    
+// }
+
+// TEST(SpeciesTest, get_action_1){
+    
+// }
+
+// TEST(SpeciesTest, get_action_2){
+    
+// }
+
+// TEST(SpeciesTest, get_action_3){
+    
+// }
+
+// ------------
 // CreatureTest
-// ----------
+// ------------
 
 // TEST(CreatureTest, do_inst_1){
 
@@ -119,11 +208,113 @@
 
 // }
 
+// Public methods
 
+// TEST(CreatureTest, creature_1) {
+
+//     ASSERT_TRUE(true);
+// }
+// TEST(CreatureTest, creature_2) {
+
+//     ASSERT_TRUE(true);
+// }
+// TEST(CreatureTest, creature_3) {
+
+//     ASSERT_TRUE(true);
+// }
+// TEST(CreatureTest, execute_instr_1) {
+
+//     ASSERT_TRUE(true);
+// }
+// TEST(CreatureTest, execute_instr_2) {
+
+//     ASSERT_TRUE(true);
+// }
+// TEST(CreatureTest, execute_instr_3) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, print_species_1) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, print_species_2) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, print_species_3) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, is_creature_1) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, is_creature_2) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, is_creature_3) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, remove_1) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, remove_2) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, remove_3) {
+
+//     ASSERT_TRUE(true);
+// }
+
+
+// Do we want print function?
+// TEST(CreatureTest, print_1) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, print_2) {
+
+//     ASSERT_TRUE(true);
+// }
+
+// TEST(CreatureTest, print_3) {
+
+//     ASSERT_TRUE(true);
+// }
 
 // ----------
 // DarwinTest
 // ----------
+
+TEST(DarwinTest, darwin_1) {
+
+    ASSERT_TRUE(true);
+}
+
+TEST(DarwinTest, darwin_2) {
+
+    ASSERT_TRUE(true);
+}
+
+TEST(DarwinTest, darwin_3) {
+
+    ASSERT_TRUE(true);
+}
 
 TEST(DarwinTest, add_creature_1) {
     Darwin d = Darwin(7, 7);

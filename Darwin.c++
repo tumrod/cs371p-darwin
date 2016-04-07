@@ -19,11 +19,14 @@ void Species::addInstruction(string instruction) {
 }
 
 void Species::print_name(ostream& w) {
-    w << name.at(0);
+    if (name.size() > 0)
+        w << name.at(0);
+    else 
+        w << name <<endl; 
 }
 
 bool Species::equal(Species s){
-    if (!(name.compare(s.name)))
+    if (!(name.compare(s.name)) && name.size() > 0)
         return true;
     return false;
 }
@@ -33,11 +36,13 @@ void Species::remove() {
   (*this).instructions.clear();
 }
 
-void Species::print() {
-  cout << "name: " << name << endl; 
+void Species::print(ostream& w) {
+  w << "name: " << name << endl; 
   for (int i = 0; (unsigned)i < instructions.size(); ++i){
-    cout << "instruction " << i << " : " << instructions[i] << endl; 
+    w << "instruction " << i << " : " << instructions[i] << endl; 
   }
+  if (instructions.size() == 0)
+    w << "no instructions" << endl; 
 }
 
 vector<int> Species::get_action(int &cnt){
@@ -386,7 +391,7 @@ void Creature::remove() {
 
 void Creature::print() {
     cout << "species: " << endl;
-    species.print();
+    species.print(cout);
     cout << "count: " << cnt << endl;
     cout << "direction: " << d << endl;
 }

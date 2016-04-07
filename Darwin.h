@@ -27,7 +27,7 @@ class Species {
         void print_name(ostream& w);
         bool equal(Species s);
         void remove();
-        void print(); 
+        void print(ostream& w); 
         vector<int> get_action(int& cnt);
 };
 

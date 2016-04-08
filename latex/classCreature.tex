@@ -1,0 +1,743 @@
+\hypertarget{classCreature}{\section{Creature Class Reference}
+\label{classCreature}\index{Creature@{Creature}}
+}
+
+
+{\ttfamily \#include $<$Darwin.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCreature_ad0d47f9e99a27af69c446708d21c190a}{Creature} (\hyperlink{classSpecies}{Species} s, int direction)
+\item 
+\hyperlink{classCreature_a597cc3b08ee17de46c3e7ec3cf0d9b58}{Creature} ()
+\item 
+void \hyperlink{classCreature_a78970c87f01823e33bbbb3ef3c6262c8}{execute\-\_\-instr} (vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&board, int row, int col)
+\item 
+void \hyperlink{classCreature_a677181a3ef2f4e85d21b36a86ae6fd2f}{print\-\_\-species} (ostream \&w)
+\item 
+bool \hyperlink{classCreature_ad44d9b96ecb95ee14fea6c71cb9597d7}{is\-\_\-creature} ()
+\item 
+void \hyperlink{classCreature_aeed948802a3bacc94f572534d0d476b7}{remove} ()
+\item 
+bool \hyperlink{classCreature_a4641e39d382f02afb77cfe6b57a9e2a2}{operator==} (const \hyperlink{classCreature}{Creature} \&rhs) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCreature_a0ba8309e2bb177bee778bc04c5ae6600}{do\-\_\-inst} (vector$<$ int $>$ instruction, vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+bool \hyperlink{classCreature_a118264a151dab550ac41311f9f8f7ea7}{is\-\_\-empty} (vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+bool \hyperlink{classCreature_a2ee600c55740e9a673b6233e7c786fd0}{is\-\_\-wall} (vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+void \hyperlink{classCreature_ab092a23505a251dde52dcbd0a5d83ee0}{ex\-\_\-go} (int n, vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+void \hyperlink{classCreature_a5411825ca5c36b299b3ca4e4222dbb9b}{ex\-\_\-hop} (vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+void \hyperlink{classCreature_ad6f4463f69ef701c0798a7802f4e6973}{ex\-\_\-left} (vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+void \hyperlink{classCreature_ae721bf8dc33713a72cbf3d663cb59af9}{ex\-\_\-right} (vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+void \hyperlink{classCreature_aece9588116d8893fd52389b6f7983e23}{ex\-\_\-infect} (vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+void \hyperlink{classCreature_a505eea4d6df8258266c4ef98c5f2fa3e}{ex\-\_\-if\-\_\-empty} (int n, vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+void \hyperlink{classCreature_a27ab40b5dc735d84122c57770b87e5c6}{ex\-\_\-if\-\_\-wall} (int n, vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+void \hyperlink{classCreature_a437d507bf4079391cbcfed4d8e547fe5}{ex\-\_\-if\-\_\-random} (int n, vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+void \hyperlink{classCreature_a5c5244e4f23132c9aa64d6c33f6aa747}{ex\-\_\-if\-\_\-enemy} (int n, vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$$>$ \&b, int r, int c)
+\item 
+\hyperlink{classCreature_aed7dd746f373e8f9540136ae39b6db96}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, do\-\_\-inst\-\_\-1)
+\item 
+\hyperlink{classCreature_afeb9e83433801181f006ff239556a8f3}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, do\-\_\-inst\-\_\-2)
+\item 
+\hyperlink{classCreature_a98789171010edc126e806b21b4fd757e}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, do\-\_\-inst\-\_\-3)
+\item 
+\hyperlink{classCreature_acaa27a2a54bcdc92bd3f963fd0c2eed6}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, is\-\_\-empty\-\_\-1)
+\item 
+\hyperlink{classCreature_a9530ce52310ac914cd810a248ca021c7}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, is\-\_\-empty\-\_\-2)
+\item 
+\hyperlink{classCreature_abcf49c24347d16959779a91c7d59612d}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, is\-\_\-empty\-\_\-3)
+\item 
+\hyperlink{classCreature_a2bd670bbdcb3e03b40479564f86cd8b7}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, is\-\_\-wall\-\_\-1)
+\item 
+\hyperlink{classCreature_a67a4b1b7d6e3163cd1e277f2113c9ac1}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, is\-\_\-wall\-\_\-2)
+\item 
+\hyperlink{classCreature_a30bbb6e4735e7ebef012fca4b9c1b32d}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, is\-\_\-wall\-\_\-3)
+\item 
+\hyperlink{classCreature_a49d8749d38ece987bccb102561af8e79}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-go\-\_\-1)
+\item 
+\hyperlink{classCreature_af1492b336156eed2a4ab8b90942a2e52}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-go\-\_\-2)
+\item 
+\hyperlink{classCreature_a0eaf9cc9b0dc74840cdc1d90455bb602}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-go\-\_\-3)
+\item 
+\hyperlink{classCreature_aec63bc1379dd4508015819333db03888}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-hop\-\_\-1)
+\item 
+\hyperlink{classCreature_a7ad6022a2c15ac493a2b40b15799d3ce}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-hop\-\_\-2)
+\item 
+\hyperlink{classCreature_abb8a49c1c9f35f2553848f37d76c7cc6}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-hop\-\_\-3)
+\item 
+\hyperlink{classCreature_aba05af453762122ca5fa64bce4a816d9}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-left\-\_\-1)
+\item 
+\hyperlink{classCreature_ac61e4bc13d3cdf77945f33abf9c3303e}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-left\-\_\-2)
+\item 
+\hyperlink{classCreature_ab65543b040cc49825c944e7535c585a4}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-left\-\_\-3)
+\item 
+\hyperlink{classCreature_a30528c6a7f69e9aa18fcc03c48009b18}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-right\-\_\-1)
+\item 
+\hyperlink{classCreature_a6a1f7873fa0d7a45e7cc5e2086feb3fd}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-right\-\_\-2)
+\item 
+\hyperlink{classCreature_a17591e11be39cce3f05936e365b9ed1e}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-right\-\_\-3)
+\item 
+\hyperlink{classCreature_a86bc8c06b2d610d2492e8c48bb83cd2d}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-infect\-\_\-1)
+\item 
+\hyperlink{classCreature_a7b812fe2acc5d409bb7e3c80eb413912}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-infect\-\_\-2)
+\item 
+\hyperlink{classCreature_acb4b51c299319178a7258aa0850b7eef}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-infect\-\_\-3)
+\item 
+\hyperlink{classCreature_a64c98a8ad349434b0a51cd0ccf73f2d0}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-empty\-\_\-1)
+\item 
+\hyperlink{classCreature_ae45f626beca465336bb70e810ec73de9}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-empty\-\_\-2)
+\item 
+\hyperlink{classCreature_aa65314b3d633c28dcd8b96c3a89da933}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-empty\-\_\-3)
+\item 
+\hyperlink{classCreature_a0979bfbbb428306a8b3eb92f1b4e03b6}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-wall\-\_\-1)
+\item 
+\hyperlink{classCreature_ac0b642db391d9877b3588216896e0240}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-wall\-\_\-2)
+\item 
+\hyperlink{classCreature_a6eb188d6fad8bd75568c2ade64c19db5}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-wall\-\_\-3)
+\item 
+\hyperlink{classCreature_a94d24e57f54754c7f11343b9f2913d4b}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-random\-\_\-1)
+\item 
+\hyperlink{classCreature_aec5c4493d8b13ce3aae23d973ec8b5e0}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-random\-\_\-2)
+\item 
+\hyperlink{classCreature_acea5d626d306e827962fe050c7dc524f}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-random\-\_\-3)
+\item 
+\hyperlink{classCreature_a13136c1f1fca622372c9d3849c1d9535}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-enemy\-\_\-1)
+\item 
+\hyperlink{classCreature_a5273b56798a0ee7d29dfb663bd41afe9}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-enemy\-\_\-2)
+\item 
+\hyperlink{classCreature_a7a9045519405d3acd8e1a9477c41e385}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, ex\-\_\-if\-\_\-enemy\-\_\-3)
+\item 
+\hyperlink{classCreature_a132d08f5021dbbb1d8642827451824bb}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, creature\-\_\-1)
+\item 
+\hyperlink{classCreature_a7d98edec998504c32bfb3724225f7b30}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, creature\-\_\-2)
+\item 
+\hyperlink{classCreature_a73bdc3f0cfdb2c29ad1dda3f2ad3762f}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (\hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}, creature\-\_\-3)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSpecies}{Species} \hyperlink{classCreature_ab0b67d0fe5520b895a7b3a4af4e80506}{species}
+\item 
+int \hyperlink{classCreature_ae087a10b645120093bb34f13e48c6bca}{d}
+\item 
+int \hyperlink{classCreature_ab34d977d533d69e85bbda9b855977522}{cnt}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{Creature\-Test}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCreature_ad0d47f9e99a27af69c446708d21c190a}{\index{Creature@{Creature}!Creature@{Creature}}
+\index{Creature@{Creature}!Creature@{Creature}}
+\subsubsection[{Creature}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-Creature (
+\begin{DoxyParamCaption}
+\item[{{\bf Species}}]{s, }
+\item[{int}]{direction}
+\end{DoxyParamCaption}
+)}}\label{classCreature_ad0d47f9e99a27af69c446708d21c190a}
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classSpecies}{Species}} & s, int direction \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_a597cc3b08ee17de46c3e7ec3cf0d9b58}{\index{Creature@{Creature}!Creature@{Creature}}
+\index{Creature@{Creature}!Creature@{Creature}}
+\subsubsection[{Creature}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-Creature (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCreature_a597cc3b08ee17de46c3e7ec3cf0d9b58}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCreature_a0ba8309e2bb177bee778bc04c5ae6600}{\index{Creature@{Creature}!do\-\_\-inst@{do\-\_\-inst}}
+\index{do\-\_\-inst@{do\-\_\-inst}!Creature@{Creature}}
+\subsubsection[{do\-\_\-inst}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::do\-\_\-inst (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$}]{instruction, }
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a0ba8309e2bb177bee778bc04c5ae6600}
+
+\begin{DoxyParams}{Parameters}
+{\em vector$<$int$>$} & instruction and vector$<$vector$<$\-Creature$>$$>$ \&b, int row, int col \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_ab092a23505a251dde52dcbd0a5d83ee0}{\index{Creature@{Creature}!ex\-\_\-go@{ex\-\_\-go}}
+\index{ex\-\_\-go@{ex\-\_\-go}!Creature@{Creature}}
+\subsubsection[{ex\-\_\-go}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::ex\-\_\-go (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_ab092a23505a251dde52dcbd0a5d83ee0}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & n, vector$<$vector$<$\-Creature$>$$>$ \&b, int r, int c \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_a5411825ca5c36b299b3ca4e4222dbb9b}{\index{Creature@{Creature}!ex\-\_\-hop@{ex\-\_\-hop}}
+\index{ex\-\_\-hop@{ex\-\_\-hop}!Creature@{Creature}}
+\subsubsection[{ex\-\_\-hop}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::ex\-\_\-hop (
+\begin{DoxyParamCaption}
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a5411825ca5c36b299b3ca4e4222dbb9b}
+
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$\-Creature$>$$>$} & \&b, int r, int c \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_a505eea4d6df8258266c4ef98c5f2fa3e}{\index{Creature@{Creature}!ex\-\_\-if\-\_\-empty@{ex\-\_\-if\-\_\-empty}}
+\index{ex\-\_\-if\-\_\-empty@{ex\-\_\-if\-\_\-empty}!Creature@{Creature}}
+\subsubsection[{ex\-\_\-if\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::ex\-\_\-if\-\_\-empty (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a505eea4d6df8258266c4ef98c5f2fa3e}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & n, vector$<$vector$<$\-Creature$>$$>$ \&b, int r, int c \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_a5c5244e4f23132c9aa64d6c33f6aa747}{\index{Creature@{Creature}!ex\-\_\-if\-\_\-enemy@{ex\-\_\-if\-\_\-enemy}}
+\index{ex\-\_\-if\-\_\-enemy@{ex\-\_\-if\-\_\-enemy}!Creature@{Creature}}
+\subsubsection[{ex\-\_\-if\-\_\-enemy}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::ex\-\_\-if\-\_\-enemy (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a5c5244e4f23132c9aa64d6c33f6aa747}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & n, vector$<$vector$<$\-Creature$>$$>$ \&b, int r, int c \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_a437d507bf4079391cbcfed4d8e547fe5}{\index{Creature@{Creature}!ex\-\_\-if\-\_\-random@{ex\-\_\-if\-\_\-random}}
+\index{ex\-\_\-if\-\_\-random@{ex\-\_\-if\-\_\-random}!Creature@{Creature}}
+\subsubsection[{ex\-\_\-if\-\_\-random}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::ex\-\_\-if\-\_\-random (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a437d507bf4079391cbcfed4d8e547fe5}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & n, vector$<$vector$<$\-Creature$>$$>$ \&b, int r, int c \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_a27ab40b5dc735d84122c57770b87e5c6}{\index{Creature@{Creature}!ex\-\_\-if\-\_\-wall@{ex\-\_\-if\-\_\-wall}}
+\index{ex\-\_\-if\-\_\-wall@{ex\-\_\-if\-\_\-wall}!Creature@{Creature}}
+\subsubsection[{ex\-\_\-if\-\_\-wall}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::ex\-\_\-if\-\_\-wall (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a27ab40b5dc735d84122c57770b87e5c6}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & n, vector$<$vector$<$\-Creature$>$$>$ \&b, int r, int c \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_aece9588116d8893fd52389b6f7983e23}{\index{Creature@{Creature}!ex\-\_\-infect@{ex\-\_\-infect}}
+\index{ex\-\_\-infect@{ex\-\_\-infect}!Creature@{Creature}}
+\subsubsection[{ex\-\_\-infect}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::ex\-\_\-infect (
+\begin{DoxyParamCaption}
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_aece9588116d8893fd52389b6f7983e23}
+
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$\-Creature$>$$>$} & \&b, int r, int c \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_ad6f4463f69ef701c0798a7802f4e6973}{\index{Creature@{Creature}!ex\-\_\-left@{ex\-\_\-left}}
+\index{ex\-\_\-left@{ex\-\_\-left}!Creature@{Creature}}
+\subsubsection[{ex\-\_\-left}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::ex\-\_\-left (
+\begin{DoxyParamCaption}
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_ad6f4463f69ef701c0798a7802f4e6973}
+
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$\-Creature$>$$>$} & \&b, int r, int c \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_ae721bf8dc33713a72cbf3d663cb59af9}{\index{Creature@{Creature}!ex\-\_\-right@{ex\-\_\-right}}
+\index{ex\-\_\-right@{ex\-\_\-right}!Creature@{Creature}}
+\subsubsection[{ex\-\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::ex\-\_\-right (
+\begin{DoxyParamCaption}
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_ae721bf8dc33713a72cbf3d663cb59af9}
+
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$\-Creature$>$$>$} & \&b, int r, int c \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_a78970c87f01823e33bbbb3ef3c6262c8}{\index{Creature@{Creature}!execute\-\_\-instr@{execute\-\_\-instr}}
+\index{execute\-\_\-instr@{execute\-\_\-instr}!Creature@{Creature}}
+\subsubsection[{execute\-\_\-instr}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::execute\-\_\-instr (
+\begin{DoxyParamCaption}
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{board, }
+\item[{int}]{row, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)}}\label{classCreature_a78970c87f01823e33bbbb3ef3c6262c8}
+
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$\-Creature$>$$>$} & \&board, int row, int col \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_aed7dd746f373e8f9540136ae39b6db96}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{do\-\_\-inst\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_aed7dd746f373e8f9540136ae39b6db96}
+\hypertarget{classCreature_afeb9e83433801181f006ff239556a8f3}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{do\-\_\-inst\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_afeb9e83433801181f006ff239556a8f3}
+\hypertarget{classCreature_a98789171010edc126e806b21b4fd757e}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{do\-\_\-inst\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a98789171010edc126e806b21b4fd757e}
+\hypertarget{classCreature_acaa27a2a54bcdc92bd3f963fd0c2eed6}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{is\-\_\-empty\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_acaa27a2a54bcdc92bd3f963fd0c2eed6}
+\hypertarget{classCreature_a9530ce52310ac914cd810a248ca021c7}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{is\-\_\-empty\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a9530ce52310ac914cd810a248ca021c7}
+\hypertarget{classCreature_abcf49c24347d16959779a91c7d59612d}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{is\-\_\-empty\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_abcf49c24347d16959779a91c7d59612d}
+\hypertarget{classCreature_a2bd670bbdcb3e03b40479564f86cd8b7}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{is\-\_\-wall\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a2bd670bbdcb3e03b40479564f86cd8b7}
+\hypertarget{classCreature_a67a4b1b7d6e3163cd1e277f2113c9ac1}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{is\-\_\-wall\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a67a4b1b7d6e3163cd1e277f2113c9ac1}
+\hypertarget{classCreature_a30bbb6e4735e7ebef012fca4b9c1b32d}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{is\-\_\-wall\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a30bbb6e4735e7ebef012fca4b9c1b32d}
+\hypertarget{classCreature_a49d8749d38ece987bccb102561af8e79}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-go\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a49d8749d38ece987bccb102561af8e79}
+\hypertarget{classCreature_af1492b336156eed2a4ab8b90942a2e52}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-go\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_af1492b336156eed2a4ab8b90942a2e52}
+\hypertarget{classCreature_a0eaf9cc9b0dc74840cdc1d90455bb602}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-go\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a0eaf9cc9b0dc74840cdc1d90455bb602}
+\hypertarget{classCreature_aec63bc1379dd4508015819333db03888}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-hop\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_aec63bc1379dd4508015819333db03888}
+\hypertarget{classCreature_a7ad6022a2c15ac493a2b40b15799d3ce}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-hop\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a7ad6022a2c15ac493a2b40b15799d3ce}
+\hypertarget{classCreature_abb8a49c1c9f35f2553848f37d76c7cc6}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-hop\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_abb8a49c1c9f35f2553848f37d76c7cc6}
+\hypertarget{classCreature_aba05af453762122ca5fa64bce4a816d9}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-left\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_aba05af453762122ca5fa64bce4a816d9}
+\hypertarget{classCreature_ac61e4bc13d3cdf77945f33abf9c3303e}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-left\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_ac61e4bc13d3cdf77945f33abf9c3303e}
+\hypertarget{classCreature_ab65543b040cc49825c944e7535c585a4}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-left\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_ab65543b040cc49825c944e7535c585a4}
+\hypertarget{classCreature_a30528c6a7f69e9aa18fcc03c48009b18}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-right\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a30528c6a7f69e9aa18fcc03c48009b18}
+\hypertarget{classCreature_a6a1f7873fa0d7a45e7cc5e2086feb3fd}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-right\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a6a1f7873fa0d7a45e7cc5e2086feb3fd}
+\hypertarget{classCreature_a17591e11be39cce3f05936e365b9ed1e}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-right\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a17591e11be39cce3f05936e365b9ed1e}
+\hypertarget{classCreature_a86bc8c06b2d610d2492e8c48bb83cd2d}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-infect\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a86bc8c06b2d610d2492e8c48bb83cd2d}
+\hypertarget{classCreature_a7b812fe2acc5d409bb7e3c80eb413912}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-infect\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a7b812fe2acc5d409bb7e3c80eb413912}
+\hypertarget{classCreature_acb4b51c299319178a7258aa0850b7eef}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-infect\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_acb4b51c299319178a7258aa0850b7eef}
+\hypertarget{classCreature_a64c98a8ad349434b0a51cd0ccf73f2d0}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-empty\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a64c98a8ad349434b0a51cd0ccf73f2d0}
+\hypertarget{classCreature_ae45f626beca465336bb70e810ec73de9}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-empty\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_ae45f626beca465336bb70e810ec73de9}
+\hypertarget{classCreature_aa65314b3d633c28dcd8b96c3a89da933}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-empty\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_aa65314b3d633c28dcd8b96c3a89da933}
+\hypertarget{classCreature_a0979bfbbb428306a8b3eb92f1b4e03b6}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-wall\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a0979bfbbb428306a8b3eb92f1b4e03b6}
+\hypertarget{classCreature_ac0b642db391d9877b3588216896e0240}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-wall\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_ac0b642db391d9877b3588216896e0240}
+\hypertarget{classCreature_a6eb188d6fad8bd75568c2ade64c19db5}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-wall\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a6eb188d6fad8bd75568c2ade64c19db5}
+\hypertarget{classCreature_a94d24e57f54754c7f11343b9f2913d4b}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-random\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a94d24e57f54754c7f11343b9f2913d4b}
+\hypertarget{classCreature_aec5c4493d8b13ce3aae23d973ec8b5e0}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-random\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_aec5c4493d8b13ce3aae23d973ec8b5e0}
+\hypertarget{classCreature_acea5d626d306e827962fe050c7dc524f}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-random\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_acea5d626d306e827962fe050c7dc524f}
+\hypertarget{classCreature_a13136c1f1fca622372c9d3849c1d9535}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-enemy\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a13136c1f1fca622372c9d3849c1d9535}
+\hypertarget{classCreature_a5273b56798a0ee7d29dfb663bd41afe9}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-enemy\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a5273b56798a0ee7d29dfb663bd41afe9}
+\hypertarget{classCreature_a7a9045519405d3acd8e1a9477c41e385}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{ex\-\_\-if\-\_\-enemy\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a7a9045519405d3acd8e1a9477c41e385}
+\hypertarget{classCreature_a132d08f5021dbbb1d8642827451824bb}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{creature\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a132d08f5021dbbb1d8642827451824bb}
+\hypertarget{classCreature_a7d98edec998504c32bfb3724225f7b30}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{creature\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a7d98edec998504c32bfb3724225f7b30}
+\hypertarget{classCreature_a73bdc3f0cfdb2c29ad1dda3f2ad3762f}{\index{Creature@{Creature}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Creature@{Creature}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Creature\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature\-Test}}]{, }
+\item[{creature\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a73bdc3f0cfdb2c29ad1dda3f2ad3762f}
+\hypertarget{classCreature_ad44d9b96ecb95ee14fea6c71cb9597d7}{\index{Creature@{Creature}!is\-\_\-creature@{is\-\_\-creature}}
+\index{is\-\_\-creature@{is\-\_\-creature}!Creature@{Creature}}
+\subsubsection[{is\-\_\-creature}]{\setlength{\rightskip}{0pt plus 5cm}bool Creature\-::is\-\_\-creature (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCreature_ad44d9b96ecb95ee14fea6c71cb9597d7}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classCreature_a118264a151dab550ac41311f9f8f7ea7}{\index{Creature@{Creature}!is\-\_\-empty@{is\-\_\-empty}}
+\index{is\-\_\-empty@{is\-\_\-empty}!Creature@{Creature}}
+\subsubsection[{is\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Creature\-::is\-\_\-empty (
+\begin{DoxyParamCaption}
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a118264a151dab550ac41311f9f8f7ea7}
+
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$\-Creature$>$$>$} & \&b, int row , int col \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classCreature_a2ee600c55740e9a673b6233e7c786fd0}{\index{Creature@{Creature}!is\-\_\-wall@{is\-\_\-wall}}
+\index{is\-\_\-wall@{is\-\_\-wall}!Creature@{Creature}}
+\subsubsection[{is\-\_\-wall}]{\setlength{\rightskip}{0pt plus 5cm}bool Creature\-::is\-\_\-wall (
+\begin{DoxyParamCaption}
+\item[{vector$<$ vector$<$ {\bf Creature} $>$$>$ \&}]{b, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_a2ee600c55740e9a673b6233e7c786fd0}
+
+\begin{DoxyParams}{Parameters}
+{\em takes} & in board row and col \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classCreature_a4641e39d382f02afb77cfe6b57a9e2a2}{\index{Creature@{Creature}!operator==@{operator==}}
+\index{operator==@{operator==}!Creature@{Creature}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Creature\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Creature} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{classCreature_a4641e39d382f02afb77cfe6b57a9e2a2}
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{classCreature}{Creature} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classCreature_a677181a3ef2f4e85d21b36a86ae6fd2f}{\index{Creature@{Creature}!print\-\_\-species@{print\-\_\-species}}
+\index{print\-\_\-species@{print\-\_\-species}!Creature@{Creature}}
+\subsubsection[{print\-\_\-species}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::print\-\_\-species (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{classCreature_a677181a3ef2f4e85d21b36a86ae6fd2f}
+
+\begin{DoxyParams}{Parameters}
+{\em ostream\&} & w \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCreature_aeed948802a3bacc94f572534d0d476b7}{\index{Creature@{Creature}!remove@{remove}}
+\index{remove@{remove}!Creature@{Creature}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void Creature\-::remove (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCreature_aeed948802a3bacc94f572534d0d476b7}
+remove creature from the board 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}{\index{Creature@{Creature}!Creature\-Test@{Creature\-Test}}
+\index{Creature\-Test@{Creature\-Test}!Creature@{Creature}}
+\subsubsection[{Creature\-Test}]{\setlength{\rightskip}{0pt plus 5cm}friend class Creature\-Test\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCreature_a8c0a0bc2c49a9483eb70dbe9f74d0b9a}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCreature_ab34d977d533d69e85bbda9b855977522}{\index{Creature@{Creature}!cnt@{cnt}}
+\index{cnt@{cnt}!Creature@{Creature}}
+\subsubsection[{cnt}]{\setlength{\rightskip}{0pt plus 5cm}int Creature\-::cnt\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_ab34d977d533d69e85bbda9b855977522}
+\hypertarget{classCreature_ae087a10b645120093bb34f13e48c6bca}{\index{Creature@{Creature}!d@{d}}
+\index{d@{d}!Creature@{Creature}}
+\subsubsection[{d}]{\setlength{\rightskip}{0pt plus 5cm}int Creature\-::d\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_ae087a10b645120093bb34f13e48c6bca}
+\hypertarget{classCreature_ab0b67d0fe5520b895a7b3a4af4e80506}{\index{Creature@{Creature}!species@{species}}
+\index{species@{species}!Creature@{Creature}}
+\subsubsection[{species}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Species} Creature\-::species\hspace{0.3cm}{\ttfamily [private]}}}\label{classCreature_ab0b67d0fe5520b895a7b3a4af4e80506}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Darwin_8h}{Darwin.\-h}\item 
+\hyperlink{Darwin_8c_09_09}{Darwin.\-c++}\end{DoxyCompactItemize}

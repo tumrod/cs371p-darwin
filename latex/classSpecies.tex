@@ -1,0 +1,174 @@
+\hypertarget{classSpecies}{\section{Species Class Reference}
+\label{classSpecies}\index{Species@{Species}}
+}
+
+
+{\ttfamily \#include $<$Darwin.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSpecies_acb1a44223d3184e2a5a8665478161c5a}{Species} (string \hyperlink{classSpecies_a11ce4c16866b4947d520bae7fd84cbfb}{name})
+\item 
+\hyperlink{classSpecies_abb0f8e3208b0cc676157b7dff837c0be}{Species} ()
+\item 
+void \hyperlink{classSpecies_a6b1195ac05cdf7da5ea5f495720da7a5}{add\-Instruction} (string instruction)
+\item 
+void \hyperlink{classSpecies_a1ddb5ea9243d57c8fd928fad06c70214}{print\-\_\-name} (ostream \&w)
+\item 
+bool \hyperlink{classSpecies_a58da6e8794203207cf9ba12268994c75}{operator==} (const \hyperlink{classSpecies}{Species} \&s) const 
+\item 
+bool \hyperlink{classSpecies_a157bafab6fa380101e4ca0a66fcb4950}{operator!=} (const \hyperlink{classSpecies}{Species} \&s) const 
+\item 
+void \hyperlink{classSpecies_af39b75705c4426214bb942d8d00eec2a}{remove} ()
+\item 
+void \hyperlink{classSpecies_a7965ec422f22b8a7636ed6479c8288f2}{print} (ostream \&w)
+\item 
+vector$<$ int $>$ \hyperlink{classSpecies_abddf118370d4b42524bc04dd8c588dcb}{get\-\_\-action} (int \&cnt)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \hyperlink{classSpecies_a2967f1f40745dd4f0b35f837cfaa33a6}{instructions}
+\item 
+string \hyperlink{classSpecies_a11ce4c16866b4947d520bae7fd84cbfb}{name}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classSpecies_abd9e19282b2e2b3fd0bb743940410ba1}{Species\-Test}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSpecies_acb1a44223d3184e2a5a8665478161c5a}{\index{Species@{Species}!Species@{Species}}
+\index{Species@{Species}!Species@{Species}}
+\subsubsection[{Species}]{\setlength{\rightskip}{0pt plus 5cm}Species\-::\-Species (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}}\label{classSpecies_acb1a44223d3184e2a5a8665478161c5a}
+
+\begin{DoxyParams}{Parameters}
+{\em String} & name and default \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpecies_abb0f8e3208b0cc676157b7dff837c0be}{\index{Species@{Species}!Species@{Species}}
+\index{Species@{Species}!Species@{Species}}
+\subsubsection[{Species}]{\setlength{\rightskip}{0pt plus 5cm}Species\-::\-Species (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSpecies_abb0f8e3208b0cc676157b7dff837c0be}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSpecies_a6b1195ac05cdf7da5ea5f495720da7a5}{\index{Species@{Species}!add\-Instruction@{add\-Instruction}}
+\index{add\-Instruction@{add\-Instruction}!Species@{Species}}
+\subsubsection[{add\-Instruction}]{\setlength{\rightskip}{0pt plus 5cm}void Species\-::add\-Instruction (
+\begin{DoxyParamCaption}
+\item[{string}]{instruction}
+\end{DoxyParamCaption}
+)}}\label{classSpecies_a6b1195ac05cdf7da5ea5f495720da7a5}
+
+\begin{DoxyParams}{Parameters}
+{\em String} & instruction \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpecies_abddf118370d4b42524bc04dd8c588dcb}{\index{Species@{Species}!get\-\_\-action@{get\-\_\-action}}
+\index{get\-\_\-action@{get\-\_\-action}!Species@{Species}}
+\subsubsection[{get\-\_\-action}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ Species\-::get\-\_\-action (
+\begin{DoxyParamCaption}
+\item[{int \&}]{cnt}
+\end{DoxyParamCaption}
+)}}\label{classSpecies_abddf118370d4b42524bc04dd8c588dcb}
+
+\begin{DoxyParams}{Parameters}
+{\em int\&} & cnt \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$int$>$ 
+\end{DoxyReturn}
+\hypertarget{classSpecies_a157bafab6fa380101e4ca0a66fcb4950}{\index{Species@{Species}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!Species@{Species}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool Species\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Species} \&}]{s}
+\end{DoxyParamCaption}
+) const}}\label{classSpecies_a157bafab6fa380101e4ca0a66fcb4950}
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{classSpecies}{Species} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classSpecies_a58da6e8794203207cf9ba12268994c75}{\index{Species@{Species}!operator==@{operator==}}
+\index{operator==@{operator==}!Species@{Species}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Species\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Species} \&}]{s}
+\end{DoxyParamCaption}
+) const}}\label{classSpecies_a58da6e8794203207cf9ba12268994c75}
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{classSpecies}{Species} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classSpecies_a7965ec422f22b8a7636ed6479c8288f2}{\index{Species@{Species}!print@{print}}
+\index{print@{print}!Species@{Species}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void Species\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{classSpecies_a7965ec422f22b8a7636ed6479c8288f2}
+
+\begin{DoxyParams}{Parameters}
+{\em output} & stream \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpecies_a1ddb5ea9243d57c8fd928fad06c70214}{\index{Species@{Species}!print\-\_\-name@{print\-\_\-name}}
+\index{print\-\_\-name@{print\-\_\-name}!Species@{Species}}
+\subsubsection[{print\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}void Species\-::print\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{classSpecies_a1ddb5ea9243d57c8fd928fad06c70214}
+
+\begin{DoxyParams}{Parameters}
+{\em output} & stream \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSpecies_af39b75705c4426214bb942d8d00eec2a}{\index{Species@{Species}!remove@{remove}}
+\index{remove@{remove}!Species@{Species}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void Species\-::remove (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSpecies_af39b75705c4426214bb942d8d00eec2a}
+removes the specie 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classSpecies_abd9e19282b2e2b3fd0bb743940410ba1}{\index{Species@{Species}!Species\-Test@{Species\-Test}}
+\index{Species\-Test@{Species\-Test}!Species@{Species}}
+\subsubsection[{Species\-Test}]{\setlength{\rightskip}{0pt plus 5cm}friend class Species\-Test\hspace{0.3cm}{\ttfamily [friend]}}}\label{classSpecies_abd9e19282b2e2b3fd0bb743940410ba1}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSpecies_a2967f1f40745dd4f0b35f837cfaa33a6}{\index{Species@{Species}!instructions@{instructions}}
+\index{instructions@{instructions}!Species@{Species}}
+\subsubsection[{instructions}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ Species\-::instructions\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpecies_a2967f1f40745dd4f0b35f837cfaa33a6}
+\hypertarget{classSpecies_a11ce4c16866b4947d520bae7fd84cbfb}{\index{Species@{Species}!name@{name}}
+\index{name@{name}!Species@{Species}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string Species\-::name\hspace{0.3cm}{\ttfamily [private]}}}\label{classSpecies_a11ce4c16866b4947d520bae7fd84cbfb}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Darwin_8h}{Darwin.\-h}\item 
+\hyperlink{Darwin_8c_09_09}{Darwin.\-c++}\end{DoxyCompactItemize}

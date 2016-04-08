@@ -161,48 +161,9 @@ int main () {
 
     d2.simulation(5, cout);
 
-    // Darwin d3 = Darwin(4, 4);
-    // Species b = Species("best");
-    // b.addInstruction("if_wall 2");
-    // b.addInstruction("if_random 3");
-    // b.addInstruction("hop");
-    // b.addInstruction("right");
-    // b.addInstruction("go 0");
+    
 
-    // Creature f222 = Creature(f, north);
-    // Creature b1 = Creature(b, east);
-    // d3.addCreature(b1, 1, 0);
-    // d3.addCreature(f222, 2, 2);
-    // Creature x = d3.at(2, 2);
-    // cout << "TESTING" << endl;
-    // x.print();
-    // d3.simulation(3, cout);
-    // ------------
-    // darwin 72x72
-    // without best
-    // ------------
-    // Darwin d3 = Darwin(4, 4);
-    // vector<vector<Creature>>::iterator b = d3.begin();
-    // vector<vector<Creature>>::iterator e = d3.end();
-    // Species t = Species("trap");
-    // Creature t21 = Creature(t, south);
-    // d3.addCreature(t21, 0, 0);
-    // while(b != e) {
-    //     vector<Creature> a = *b; 
-    //     vector<Creature>::iterator temp = a.begin();
-    //     vector<Creature>::iterator end = a.end();
-    //     while ( temp != end ){
-    //         if((*temp).is_creature())
-    //             cout << "c" ;
-    //         else
-    //             cout << "." ; 
-    //         ++ temp; 
-    //     }
-    //     cout << endl; 
-    //     ++b; 
-    // }
 
-    // d3.print2(cout);
     cout << "*** Darwin 72x72 without Best ***" << endl;
     srand(0);
     /*
@@ -222,200 +183,39 @@ int main () {
     */
     Darwin d3 = Darwin(72, 72);
 
-    // int row = rand()%5184; 
-    // int dir; 
+    int row;
+    int col;
 
-    // for (int i < 0; i < 10; ++i){
-    //     dir = rand()%4;
-    //     Creature t = Creature(t, dir);
-    //     d3.addCreature(t, ) 
+    int dir; 
 
-    // }
+    
+    Species s;
+    for (int j = 0; j < 4; ++j) {
+        if (j == 0)
+            s = f;
+        else if (j == 1)
+            s = h;
+        else if (j == 2)
+            s = r;
+        else if (j == 3)
+            s = t; 
 
-    // for (int i < 0; i < 10; ++i){
-    //     dir = rand()%4;
-    //     Creature h = Creature(h, dir);
-    //     d3.addCreature(h, ) 
+        for (int i = 0; i < 10; ++i){
+            col = rand()%5184;
+            row = col/72;  
 
-    // }
+            if(col >72)
+                col = col%72;
+            
+            dir = rand()%4;
+            Creature f1 = Creature(s, dir);
+            d3.addCreature(f1, row, col); 
+ 
 
-    // for (int i < 0; i < 10; ++i){
-    //     dir = rand()%4;
-    //     Creature r = Creature(r, dir);
-    //     d3.addCreature(r, ) 
+        }
+    }
 
-    // }
-
-    // for (int i < 0; i < 10; ++i){
-    //     dir = rand()%4;
-    //     Creature f = Creature(f, dir);
-    //     d3.addCreature(f, ) 
-
-    // }
-
-    // Creature t31 = Creature(t, dir);
-    // d3.addCreature(t31, 0, 0);
-    // dir = rand()%4;
-    // Creature t32 = Creature(t, dir);
-    // d3.addCreature(t31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature t33 = Creature(t, dir);
-    // d3.addCreature(t31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature t34 = Creature(t, dir);
-    // d3.addCreature(t31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature t35 = Creature(t, dir);
-    // d3.addCreature(t31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature t36 = Creature(t, dir);
-    // d3.addCreature(t31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature t37 = Creature(t, dir);
-    // d3.addCreature(t31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature t38 = Creature(t, dir);
-    // d3.addCreature(t31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature t39 = Creature(t, dir);
-    // d3.addCreature(t31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature t30 = Creature(t, dir);
-    // d3.addCreature(t31, 0, 0);
-
-    // dir = rand()%4;
-
-
-    // Creature h30 = Creature(h, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature h31 = Creature(h, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature h32 = Creature(h, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature h33 = Creature(h, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature h34 = Creature(h, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature h35 = Creature(h, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature h36 = Creature(h, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature h37 = Creature(h, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature h38 = Creature(h, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature h39 = Creature(h, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-
-    // Creature r30 = Creature(r, dir);
-    // d3.addCreature(r31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature r31 = Creature(r, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature r32 = Creature(r, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature r33 = Creature(r, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature r34 = Creature(r, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature r35 = Creature(r, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature r36 = Creature(r, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature r37 = Creature(r, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature r38 = Creature(r, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature r39 = Creature(r, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-
-    // Creature f30 = Creature(f, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature f31 = Creature(f, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature f32 = Creature(f, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature f33 = Creature(f, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature f34 = Creature(f, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature f35 = Creature(f, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature f36 = Creature(f, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature f37 = Creature(f, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature f38 = Creature(f, dir);
-    // d3.addCreature(h31, 0, 0);
-
-    // dir = rand()%4;
-    // Creature f39 = Creature(f, dir);
-    // d3.addCreature(h31, 0, 0);
-
-
+    d3.simulation(1000, cout, 1, 10, 100); 
 
 
 
@@ -444,5 +244,48 @@ int main () {
     Print the first 10 grids          (i.e. 0, 1, 2...9).
     Print every 100th grid after that (i.e. 100, 200, 300...1000).
     */
+
+    Darwin d4 = Darwin(72, 72);
+
+    Species best = Species("best"); 
+    best.addInstruction("if_empty 5");
+    best.addInstruction("if_enemy 3");
+    best.addInstruction("if_wall 7");
+    best.addInstruction("infect");
+    best.addInstruction("go 0");
+    best.addInstruction("hop");
+    best.addInstruction("go 0");
+    best.addInstruction("left");
+    best.addInstruction("go 0");
+    
+  
+    for (int j = 0; j < 5; ++j) {
+        if (j == 0)
+            s = f;
+        else if (j == 1)
+            s = h;
+        else if (j == 2)
+            s = r;
+        else if (j == 3)
+            s = t; 
+        else if (j == 4)
+            s = best; 
+
+        for (int i = 0; i < 10; ++i){
+            col = rand()%5184;
+            row = col/72;  
+
+            if(col >72)
+                col = col%72;
+            
+            dir = rand()%4;
+            Creature f1 = Creature(s, dir);
+            d4.addCreature(f1, row, col); 
+ 
+
+        }
+    }
+
+    d4.simulation(1000, cout, 1, 10, 100); 
 
     return 0;}

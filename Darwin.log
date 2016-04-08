@@ -1,0 +1,131 @@
+commit 768f6c1466e32421fb954c2b79a53add08973524
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Thu Apr 7 18:43:09 2016 -0500
+
+    merge and cleaned up
+
+commit 1e239f34a96ed3014f92922d93871b215c504614
+Author: Amnah Afzal <amnah@cs.utexas.edu>
+Date:   Thu Apr 7 18:36:12 2016 -0500
+
+    Made some changes to begin end and at
+
+commit ed770f610f36b016843d446d1be003bfc81db607
+Author: Amnah Afzal <amnah@cs.utexas.edu>
+Date:   Thu Apr 7 18:27:59 2016 -0500
+
+     Added more tests and UML diagram
+
+commit 2239d27ce0cbacf004a815191ac4af002c111884
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Thu Apr 7 15:41:14 2016 -0500
+
+    added operator== and operator!=
+
+commit 3a17803a4584340dd260916a6736f3224acf4fc0
+Author: Amnah Afzal <amnah@cs.utexas.edu>
+Date:   Thu Apr 7 14:40:52 2016 -0500
+
+    Added Species and some creature unit tests
+
+commit f56e3ba5b66f61b5fbef67fde4f3578122283da6
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Wed Apr 6 20:21:59 2016 -0500
+
+    added structures for unit tests
+
+commit 168e46d2ee86766d7867a6da75a9d7afd8e707f8
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Wed Apr 6 18:29:00 2016 -0500
+
+    Unit test structures
+
+commit 0b2cdd9ee005122ff6605ea24bca4875194cf110
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Wed Apr 6 17:37:20 2016 -0500
+
+    implement begin(), end(), at(), closed #19
+
+commit 9cb67425c2bda7670b5c4c90f45cad1267ba5dfd
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Tue Apr 5 19:46:36 2016 -0500
+
+    clean up the code; using switch cases
+
+commit 5a035043ee8e1cbf5ec5d88535985de0719b9a8c
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Tue Apr 5 18:31:55 2016 -0500
+
+    implement simulation and fix print col and row, closed #18, #16, #21
+
+commit 21f41745b2f9178a9e9070cfd5c4ee8532a43805
+Author: Amnah Afzal <amnah@cs.utexas.edu>
+Date:   Tue Apr 5 17:33:57 2016 -0500
+
+    Rearranged pare instructions
+
+commit 2e910849df86ecb367282a8a1e969048b4973409
+Author: Amnah Afzal <amnah@cs.utexas.edu>
+Date:   Sun Apr 3 20:45:37 2016 -0500
+
+    Fixed the seg fault and intruction repetition. This closes #15.
+
+commit e0b9f5ce29ee76933d1155b32dbbf9bb59558013
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Sat Apr 2 17:34:40 2016 -0500
+
+    debugging hopping
+
+commit e43d8a48adc3e7c0b6f77f90a573c738a4eb4f1b
+Author: Amnah Afzal <amnah@cs.utexas.edu>
+Date:   Sat Apr 2 13:45:42 2016 -0500
+
+    Cleaned up bugs before testing. This closes #12, #13.
+
+commit 8eb9960b4c604acdcb595bdc0fb2336a419fcff6
+Author: Amnah Afzal <amnah@cs.utexas.edu>
+Date:   Sat Apr 2 12:34:07 2016 -0500
+
+    Fixed split. This closses #14
+
+commit a42792e0621814eee4ab117d8accf8cc212bc949
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Sat Apr 2 12:21:34 2016 -0500
+
+    still debugging/ fixing compile errors
+
+commit 149695cacf3e465a5b00ca42a1fec880cc0aec6a
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Fri Apr 1 20:08:22 2016 -0500
+
+    attempted to clear the initial compile errors
+
+commit 2f119a9506275e75efc098d989cae16cf8db4b27
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Fri Apr 1 20:02:36 2016 -0500
+
+    implemented classes, closed #6
+
+commit 556559c30fcdee7ddff085c95b4974d86dc2a504
+Author: tumrod <tipparat.umrod@utexas.edu>
+Date:   Thu Mar 31 18:22:37 2016 -0500
+
+    added Darwin.h, different classes
+
+commit a4b9dae11a89aa3e61d9bccc82b9fd5c42e1ad54
+Author: Amnah Afzal <amnah@cs.utexas.edu>
+Date:   Thu Mar 31 17:17:30 2016 -0500
+
+    Changed gitignore
+
+commit 057092a0701469ee3641d6c1589e2f9492653e81
+Author: Amnah Afzal <amnah@cs.utexas.edu>
+Date:   Thu Mar 31 17:04:47 2016 -0500
+
+    Adding initial files
+
+commit 5acd641ea987411db695cba87f25900d74fc958c
+Author: Tipparat Umrod <tumrod@users.noreply.github.com>
+Date:   Thu Mar 31 16:45:18 2016 -0500
+
+    Initial commit

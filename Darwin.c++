@@ -410,16 +410,37 @@ void Darwin::print(ostream& w) {
     }
 }
 
-void Darwin::simulation(int times, ostream& w) {
+void Darwin::simulation(int times, ostream& w, int start, int end, int step) {
     assert(times > 0);
     w << "Turn = 0." << endl;;
     (*this).print(w);
     w << endl;
+    bool st = false; 
+    if ( start != 0)
+        st = true; 
+
+    if ( start == 0 && end == 0) {
+        end = times;
+        start = 1;        
+    }
 
     for (int i = 1; i <= times; ++i) {
-        w << "Turn = " << i << "." << endl;;
         (*this).turn();
-        (*this).print(w);
-        w << endl;
+        if (start <= end){
+            w << "Turn = " << i << "." << endl;;
+            (*this).print(w);
+            ++start; 
+            w << endl;
+        }
+        if (st){
+            if ( (i % step) == 0){
+                 w << "Turn = " << i << "." << endl;;
+                (*this).print(w); 
+                w << endl;
+            }
+
+        }
+        
+            
     }
 }

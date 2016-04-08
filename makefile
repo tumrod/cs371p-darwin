@@ -1,7 +1,7 @@
 FILES :=                            \
-    darwin-tests/EID-RunDarwin.out  \
-    darwin-tests/EID-TestDarwin.c++ \
-    darwin-tests/EID-TestDarwin.out \
+    darwin-tests/tu564-RunDarwin.out  \
+    darwin-tests/tu564-TestDarwin.c++ \
+    darwin-tests/tu564-TestDarwin.out \
     Darwin.c++                      \
     Darwin.h                        \
     Darwin.log                      \

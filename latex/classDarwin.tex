@@ -1,0 +1,236 @@
+\hypertarget{classDarwin}{\section{Darwin Class Reference}
+\label{classDarwin}\index{Darwin@{Darwin}}
+}
+
+
+{\ttfamily \#include $<$Darwin.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDarwin_ac1cbdea8e74dc140ba7a16558776e01b}{Darwin} (int \hyperlink{classDarwin_a61b2dd87961ab46d2a567fd350054abd}{row}, int col)
+\item 
+void \hyperlink{classDarwin_a828c76c63708df1ff877c8564ce52f0c}{add\-Creature} (\hyperlink{classCreature}{Creature} \&creature, int r, int c)
+\item 
+void \hyperlink{classDarwin_a31afe2dd9b1c0621f9b21c02ef2a2c98}{turn} ()
+\item 
+void \hyperlink{classDarwin_a61e92c982448f89a657130b223cf2816}{print} (ostream \&w)
+\item 
+const \hyperlink{classCreature}{Creature} \hyperlink{classDarwin_a2e1fa6a0aada199d63e78caab111ee80}{at} (int r, int c) const 
+\item 
+\hyperlink{classCreature}{Creature} \hyperlink{classDarwin_a89affefc7a706f8fc0d2599958c24e27}{at} (int r, int c)
+\item 
+const vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$\\*
+ $>$\-::iterator \hyperlink{classDarwin_a2b292091a8d25ad8524b553e609bc751}{begin} () const 
+\item 
+vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$\\*
+ $>$\-::iterator \hyperlink{classDarwin_a7515ab241b683a3f20feaa333d549746}{begin} ()
+\item 
+const vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$\\*
+ $>$\-::iterator \hyperlink{classDarwin_a4944be4f11cc8767343bdf5cfcadefd4}{end} () const 
+\item 
+vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$\\*
+ $>$\-::iterator \hyperlink{classDarwin_adf31a66f90ef0e6eff158417d6d7dfc8}{end} ()
+\item 
+void \hyperlink{classDarwin_ab7986cfa21314919b8af6a1054017217}{simulation} (int times, ostream \&w, int start=0, int \hyperlink{classDarwin_a4944be4f11cc8767343bdf5cfcadefd4}{end}=0, int step=1)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDarwin_a41b5caedaba97d8fd9578c468c5a2cca}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (Darwin\-Test, darwin\-\_\-1)
+\item 
+\hyperlink{classDarwin_a22c99b66c45357d0c6862e03e5f28b75}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (Darwin\-Test, darwin\-\_\-2)
+\item 
+\hyperlink{classDarwin_a2785aa56b774625c6296743d7f7e9406}{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T} (Darwin\-Test, darwin\-\_\-3)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classDarwin_a61b2dd87961ab46d2a567fd350054abd}{row}
+\item 
+int \hyperlink{classDarwin_a4c848077e1e7bd289569834299fb26a3}{column}
+\item 
+vector$<$ vector$<$ \hyperlink{classCreature}{Creature} $>$ $>$ \hyperlink{classDarwin_a52a47e765dc5281e92a670f443315747}{board}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDarwin_ac1cbdea8e74dc140ba7a16558776e01b}{\index{Darwin@{Darwin}!Darwin@{Darwin}}
+\index{Darwin@{Darwin}!Darwin@{Darwin}}
+\subsubsection[{Darwin}]{\setlength{\rightskip}{0pt plus 5cm}Darwin\-::\-Darwin (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)}}\label{classDarwin_ac1cbdea8e74dc140ba7a16558776e01b}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & row, int col \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDarwin_a828c76c63708df1ff877c8564ce52f0c}{\index{Darwin@{Darwin}!add\-Creature@{add\-Creature}}
+\index{add\-Creature@{add\-Creature}!Darwin@{Darwin}}
+\subsubsection[{add\-Creature}]{\setlength{\rightskip}{0pt plus 5cm}void Darwin\-::add\-Creature (
+\begin{DoxyParamCaption}
+\item[{{\bf Creature} \&}]{creature, }
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{classDarwin_a828c76c63708df1ff877c8564ce52f0c}
+
+\begin{DoxyParams}{Parameters}
+{\em Creature\&} & creature, int r, int c \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDarwin_a2e1fa6a0aada199d63e78caab111ee80}{\index{Darwin@{Darwin}!at@{at}}
+\index{at@{at}!Darwin@{Darwin}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Creature} Darwin\-::at (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+) const}}\label{classDarwin_a2e1fa6a0aada199d63e78caab111ee80}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & r, int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \hyperlink{classCreature}{Creature} 
+\end{DoxyReturn}
+\hypertarget{classDarwin_a89affefc7a706f8fc0d2599958c24e27}{\index{Darwin@{Darwin}!at@{at}}
+\index{at@{at}!Darwin@{Darwin}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Creature} Darwin\-::at (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{classDarwin_a89affefc7a706f8fc0d2599958c24e27}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & r, int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classCreature}{Creature} 
+\end{DoxyReturn}
+\hypertarget{classDarwin_a2b292091a8d25ad8524b553e609bc751}{\index{Darwin@{Darwin}!begin@{begin}}
+\index{begin@{begin}!Darwin@{Darwin}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ vector$<$ {\bf Creature} $>$ $>$\-::iterator Darwin\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDarwin_a2b292091a8d25ad8524b553e609bc751}
+\begin{DoxyReturn}{Returns}
+const vector$<$vector$<$\-Creature$>$$>$\-::iterator 
+\end{DoxyReturn}
+\hypertarget{classDarwin_a7515ab241b683a3f20feaa333d549746}{\index{Darwin@{Darwin}!begin@{begin}}
+\index{begin@{begin}!Darwin@{Darwin}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ {\bf Creature} $>$ $>$\-::iterator Darwin\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDarwin_a7515ab241b683a3f20feaa333d549746}
+\begin{DoxyReturn}{Returns}
+vector$<$vector$<$\-Creature$>$$>$\-::iterator 
+\end{DoxyReturn}
+\hypertarget{classDarwin_a4944be4f11cc8767343bdf5cfcadefd4}{\index{Darwin@{Darwin}!end@{end}}
+\index{end@{end}!Darwin@{Darwin}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ vector$<$ {\bf Creature} $>$ $>$\-::iterator Darwin\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDarwin_a4944be4f11cc8767343bdf5cfcadefd4}
+\begin{DoxyReturn}{Returns}
+const vector$<$vector$<$\-Creature$>$$>$\-::iterator 
+\end{DoxyReturn}
+\hypertarget{classDarwin_adf31a66f90ef0e6eff158417d6d7dfc8}{\index{Darwin@{Darwin}!end@{end}}
+\index{end@{end}!Darwin@{Darwin}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ {\bf Creature} $>$ $>$\-::iterator Darwin\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDarwin_adf31a66f90ef0e6eff158417d6d7dfc8}
+\begin{DoxyReturn}{Returns}
+vector$<$vector$<$\-Creature$>$$>$\-::iterator 
+\end{DoxyReturn}
+\hypertarget{classDarwin_a41b5caedaba97d8fd9578c468c5a2cca}{\index{Darwin@{Darwin}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Darwin@{Darwin}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Darwin\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Darwin\-Test}]{, }
+\item[{darwin\-\_\-1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDarwin_a41b5caedaba97d8fd9578c468c5a2cca}
+\hypertarget{classDarwin_a22c99b66c45357d0c6862e03e5f28b75}{\index{Darwin@{Darwin}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Darwin@{Darwin}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Darwin\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Darwin\-Test}]{, }
+\item[{darwin\-\_\-2}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDarwin_a22c99b66c45357d0c6862e03e5f28b75}
+\hypertarget{classDarwin_a2785aa56b774625c6296743d7f7e9406}{\index{Darwin@{Darwin}!F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}}
+\index{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T@{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}!Darwin@{Darwin}}
+\subsubsection[{F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}Darwin\-::\-F\-R\-I\-E\-N\-D\-\_\-\-T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Darwin\-Test}]{, }
+\item[{darwin\-\_\-3}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classDarwin_a2785aa56b774625c6296743d7f7e9406}
+\hypertarget{classDarwin_a61e92c982448f89a657130b223cf2816}{\index{Darwin@{Darwin}!print@{print}}
+\index{print@{print}!Darwin@{Darwin}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void Darwin\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{classDarwin_a61e92c982448f89a657130b223cf2816}
+
+\begin{DoxyParams}{Parameters}
+{\em ostream\&} & w \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDarwin_ab7986cfa21314919b8af6a1054017217}{\index{Darwin@{Darwin}!simulation@{simulation}}
+\index{simulation@{simulation}!Darwin@{Darwin}}
+\subsubsection[{simulation}]{\setlength{\rightskip}{0pt plus 5cm}void Darwin\-::simulation (
+\begin{DoxyParamCaption}
+\item[{int}]{times, }
+\item[{ostream \&}]{w, }
+\item[{int}]{start = {\ttfamily 0}, }
+\item[{int}]{end = {\ttfamily 0}, }
+\item[{int}]{step = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classDarwin_ab7986cfa21314919b8af6a1054017217}
+
+\begin{DoxyParams}{Parameters}
+{\em int} & times, ostream\& w, int start = 0, int end = 0, int step = 1 \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDarwin_a31afe2dd9b1c0621f9b21c02ef2a2c98}{\index{Darwin@{Darwin}!turn@{turn}}
+\index{turn@{turn}!Darwin@{Darwin}}
+\subsubsection[{turn}]{\setlength{\rightskip}{0pt plus 5cm}void Darwin\-::turn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDarwin_a31afe2dd9b1c0621f9b21c02ef2a2c98}
+execute the turn 
+
+\subsection{Member Data Documentation}
+\hypertarget{classDarwin_a52a47e765dc5281e92a670f443315747}{\index{Darwin@{Darwin}!board@{board}}
+\index{board@{board}!Darwin@{Darwin}}
+\subsubsection[{board}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<${\bf Creature}$>$ $>$ Darwin\-::board\hspace{0.3cm}{\ttfamily [private]}}}\label{classDarwin_a52a47e765dc5281e92a670f443315747}
+\hypertarget{classDarwin_a4c848077e1e7bd289569834299fb26a3}{\index{Darwin@{Darwin}!column@{column}}
+\index{column@{column}!Darwin@{Darwin}}
+\subsubsection[{column}]{\setlength{\rightskip}{0pt plus 5cm}int Darwin\-::column\hspace{0.3cm}{\ttfamily [private]}}}\label{classDarwin_a4c848077e1e7bd289569834299fb26a3}
+\hypertarget{classDarwin_a61b2dd87961ab46d2a567fd350054abd}{\index{Darwin@{Darwin}!row@{row}}
+\index{row@{row}!Darwin@{Darwin}}
+\subsubsection[{row}]{\setlength{\rightskip}{0pt plus 5cm}int Darwin\-::row\hspace{0.3cm}{\ttfamily [private]}}}\label{classDarwin_a61b2dd87961ab46d2a567fd350054abd}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Darwin_8h}{Darwin.\-h}\item 
+\hyperlink{Darwin_8c_09_09}{Darwin.\-c++}\end{DoxyCompactItemize}

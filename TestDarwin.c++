@@ -96,7 +96,6 @@ TEST(SpeciesTest, NE_3){
     ASSERT_NE(f1, f2);
 }
 
-
 TEST(SpeciesTest, EQ_1){
     Species f1 = Species("rover");
     Species f2 = Species("rover");
@@ -1205,6 +1204,13 @@ TEST(DarwinTest, at_3) {
     ASSERT_EQ("", w.str());
 }
 
+TEST(DarwinTest, const_at_1) {
+    Darwin d = Darwin(8, 8);
+    ostringstream w;
+    const Creature result = d.at(0, 0);
+    ASSERT_TRUE(true);
+}
+
 TEST(DarwinTest, begin_1) {
     Darwin d = Darwin(8, 8);
     Species f = Species("food");
@@ -1237,6 +1243,42 @@ TEST(DarwinTest, begin_3) {
     ASSERT_EQ(result, f1);
 }
 
+TEST(DarwinTest, const_begin_1) {
+    Darwin d = Darwin(8, 8);
+    Species f = Species("food");
+    Creature f1 = Creature(f, north);
+    d.addCreature(f1, 0, 0);
+    const vector<vector<Creature>>::iterator row = d.begin();
+    Creature result = *((*row).begin());
+    ASSERT_EQ(result, f1);
+}
+
+// TEST(DarwinTest, const_begin_2) {
+//     Darwin d = Darwin(8, 8);
+//     Species f = Species("food");
+//     Creature f1 = Creature(f, north);
+//     d.addCreature(f1, 0, 1);
+//     const vector<vector<Creature>>::iterator row = d.begin();
+//     const vector<Creature>::iterator result = (*row).begin();
+//     try {
+//         result = result+1;
+//         FAIL();
+//     }
+//     catch (const std::exception& ex) {
+//         ASSERT_TRUE(true);
+//     }
+// }
+
+// TEST(DarwinTest, const_begin_3) {
+//     Darwin d = Darwin(2, 2);
+//     Species f = Species("food");
+//     Creature f1 = Creature(f, north);
+//     d.addCreature(f1, 1, 0);
+//     vector<vector<Creature>>::iterator row = d.begin() + 1;
+//     Creature result = *((*row).begin());
+//     ASSERT_EQ(result, f1);
+// }
+
 TEST(DarwinTest, end_1) {
     Darwin d = Darwin(8, 8);
     Species h = Species("hopper");
@@ -1266,6 +1308,17 @@ TEST(DarwinTest, end_3) {
     d.addCreature(h1, 9, 0);
     vector<vector<Creature>>::iterator row = d.end() -1 ;
     vector<Creature>::iterator col = (*row).end() -10; 
+    Creature result = *(col);
+    ASSERT_EQ(result, h1);
+}
+
+TEST(DarwinTest, const_end_1) {
+    Darwin d = Darwin(8, 8);
+    Species h = Species("hopper");
+    Creature h1 = Creature(h, south);
+    d.addCreature(h1, 7, 7);
+    const vector<vector<Creature>>::iterator row = d.end() -1 ;
+    const vector<Creature>::iterator col = (*row).end() -1; 
     Creature result = *(col);
     ASSERT_EQ(result, h1);
 }

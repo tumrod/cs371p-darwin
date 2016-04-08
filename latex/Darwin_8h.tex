@@ -1,0 +1,86 @@
+\hypertarget{Darwin_8h}{\section{Darwin.\-h File Reference}
+\label{Darwin_8h}\index{Darwin.\-h@{Darwin.\-h}}
+}
+{\ttfamily \#include $<$cassert$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include \char`\"{}gtest/gtest.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classSpecies}{Species}
+\item 
+class \hyperlink{classCreature}{Creature}
+\item 
+class \hyperlink{classDarwin}{Darwin}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \{ \hyperlink{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa9f771a3f89930d6b7e164e32a951dcb6}{west}, 
+\hyperlink{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa257e6b7fcd6ccb860083f20eb9bd660d}{north}, 
+\hyperlink{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa1be79cd4775c5384e197f1031580b10a}{east}, 
+\hyperlink{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa035a454a75284b5dc261bd500ab311ed}{south}
+ \}
+\item 
+enum \hyperlink{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684}{Instruction} \{ \\*
+\hyperlink{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684abdf3ecc5a22b76715e08d446fa022b49}{hop}, 
+\hyperlink{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a88f7edef1d15d0eea4eadd519c406a2e}{lft}, 
+\hyperlink{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a8e684d6ff49d0143da4d731c4fbe9ec1}{rit}, 
+\hyperlink{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a0e41779591ca1a346b3e7d4c55b3655d}{infect}, 
+\\*
+\hyperlink{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a3eb39b82b73a295b86b01670c255f1b5}{if\-\_\-empty}, 
+\hyperlink{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a67a37e188872b4760a779fb9bd8965d6}{if\-\_\-wall}, 
+\hyperlink{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684ae7b7eaa9d00518404980a2ac7fb41aec}{if\-\_\-random}, 
+\hyperlink{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684afdcac65c70a440a193ded8db8a187eaa}{if\-\_\-enemy}, 
+\\*
+\hyperlink{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a32bc4fb395cca45055bc7f89e5be6843}{go}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aa}{\index{Darwin.\-h@{Darwin.\-h}!Direction@{Direction}}
+\index{Direction@{Direction}!Darwin.h@{Darwin.\-h}}
+\subsubsection[{Direction}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Direction}}}\label{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aa}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{west@{west}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!west@{west}}\item[{\em 
+\hypertarget{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa9f771a3f89930d6b7e164e32a951dcb6}{west}\label{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa9f771a3f89930d6b7e164e32a951dcb6}
+}]\index{north@{north}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!north@{north}}\item[{\em 
+\hypertarget{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa257e6b7fcd6ccb860083f20eb9bd660d}{north}\label{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa257e6b7fcd6ccb860083f20eb9bd660d}
+}]\index{east@{east}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!east@{east}}\item[{\em 
+\hypertarget{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa1be79cd4775c5384e197f1031580b10a}{east}\label{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa1be79cd4775c5384e197f1031580b10a}
+}]\index{south@{south}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!south@{south}}\item[{\em 
+\hypertarget{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa035a454a75284b5dc261bd500ab311ed}{south}\label{Darwin_8h_a224b9163917ac32fc95a60d8c1eec3aaa035a454a75284b5dc261bd500ab311ed}
+}]\end{description}
+\end{Desc}
+\hypertarget{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684}{\index{Darwin.\-h@{Darwin.\-h}!Instruction@{Instruction}}
+\index{Instruction@{Instruction}!Darwin.h@{Darwin.\-h}}
+\subsubsection[{Instruction}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Instruction}}}\label{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{hop@{hop}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!hop@{hop}}\item[{\em 
+\hypertarget{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684abdf3ecc5a22b76715e08d446fa022b49}{hop}\label{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684abdf3ecc5a22b76715e08d446fa022b49}
+}]\index{lft@{lft}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!lft@{lft}}\item[{\em 
+\hypertarget{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a88f7edef1d15d0eea4eadd519c406a2e}{lft}\label{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a88f7edef1d15d0eea4eadd519c406a2e}
+}]\index{rit@{rit}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!rit@{rit}}\item[{\em 
+\hypertarget{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a8e684d6ff49d0143da4d731c4fbe9ec1}{rit}\label{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a8e684d6ff49d0143da4d731c4fbe9ec1}
+}]\index{infect@{infect}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!infect@{infect}}\item[{\em 
+\hypertarget{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a0e41779591ca1a346b3e7d4c55b3655d}{infect}\label{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a0e41779591ca1a346b3e7d4c55b3655d}
+}]\index{if\-\_\-empty@{if\-\_\-empty}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!if\-\_\-empty@{if\-\_\-empty}}\item[{\em 
+\hypertarget{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a3eb39b82b73a295b86b01670c255f1b5}{if\-\_\-empty}\label{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a3eb39b82b73a295b86b01670c255f1b5}
+}]\index{if\-\_\-wall@{if\-\_\-wall}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!if\-\_\-wall@{if\-\_\-wall}}\item[{\em 
+\hypertarget{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a67a37e188872b4760a779fb9bd8965d6}{if\-\_\-wall}\label{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a67a37e188872b4760a779fb9bd8965d6}
+}]\index{if\-\_\-random@{if\-\_\-random}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!if\-\_\-random@{if\-\_\-random}}\item[{\em 
+\hypertarget{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684ae7b7eaa9d00518404980a2ac7fb41aec}{if\-\_\-random}\label{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684ae7b7eaa9d00518404980a2ac7fb41aec}
+}]\index{if\-\_\-enemy@{if\-\_\-enemy}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!if\-\_\-enemy@{if\-\_\-enemy}}\item[{\em 
+\hypertarget{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684afdcac65c70a440a193ded8db8a187eaa}{if\-\_\-enemy}\label{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684afdcac65c70a440a193ded8db8a187eaa}
+}]\index{go@{go}!Darwin.\-h@{Darwin.\-h}}\index{Darwin.\-h@{Darwin.\-h}!go@{go}}\item[{\em 
+\hypertarget{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a32bc4fb395cca45055bc7f89e5be6843}{go}\label{Darwin_8h_acbd603b5f7c788a74eade8d4837ba684a32bc4fb395cca45055bc7f89e5be6843}
+}]\end{description}
+\end{Desc}
